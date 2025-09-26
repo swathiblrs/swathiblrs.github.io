@@ -1,36 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Swathi B S · Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020; --card:#11162a; --muted:#9fb0c3; --text:#eef3fb;
+      --brand:#7c5cff; --accent:#22d3a9; --ring:rgba(124,92,255,.4);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,Segoe UI,Roboto,Arial}
+    a{color:inherit}
+    .container{max-width:1050px;margin:auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;justify-content:space-between;align-items:center}
+    .brand{font-weight:800;display:flex;gap:.6rem;align-items:center}
+    .dot{width:.75rem;height:.75rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent))}
+    .nav a{padding:.6rem .8rem;border-radius:.7rem;color:var(--muted);text-decoration:none}
+    .nav a:hover{background:rgba(255,255,255,.07);color:var(--text)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
+    h1{font-size:clamp(28px,4vw,46px);line-height:1.15;margin:.3rem 0 1rem}
+    .lead{color:var(--muted);font-size:18px}
+    .btn{display:inline-flex;gap:.6rem;align-items:center;padding:.75rem 1rem;border-radius:12px;text-decoration:none;background:var(--brand);color:#fff;font-weight:600;box-shadow:0 10px 30px rgba(124,92,255,.25)}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.15)}
+    .stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+    .pill{padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--muted);font-size:12px}
+    section{padding:26px 0}
+    h2{font-size:clamp(22px,3vw,28px);margin:0 0 .6rem}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:18px}
+    .grid{display:grid;gap:16px}
+    .grid.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    footer{border-top:1px solid rgba(255,255,255,.07);color:var(--muted);padding:24px 0;margin-top:24px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid.c2{grid-template-columns:1fr}.grid.c3{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.grid.c3{grid-template-columns:1fr}}
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 2rem; background:#f8f9fa; color:#222;">
+<body>
   <header>
-    <h1>Hi, I'm Swathi Bangalore Satish 👋</h1>
-    <p>Software Engineer | MSCS Student (Spring 2026)</p>
+    <div class="container">
+      <nav>
+        <div class="brand"><span class="dot"></span> Swathi B S</div>
+        <div class="nav">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
   </header>
-  <section>
-    <h2>About Me</h2>
-    <p>Results-driven software engineer with experience in C++/Python development, 5G NR/RRC simulation, and automation workflows.
-    Previously at Nokia, optimized FSM workflows improving efficiency by 40% and co-developed an NLP-powered ChatBot to automate internal queries.</p>
-  </section>
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>C++, Python, Java, Kotlin</li>
-      <li>Pytest, GTest, Jenkins, Docker, Kubernetes</li>
-      <li>MySQL, PostgreSQL, MongoDB, Redis</li>
-      <li>Wireshark, Valgrind, Coverity</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Links</h2>
-    <p>
-      <a href="mailto:swathiblrs@gmail.com">📧 Email</a> | 
-      <a href="https://www.linkedin.com/in/swabs" target="_blank">🔗 LinkedIn</a> | 
-      <a href="https://github.com/swathiblrs" target="_blank">🐙 GitHub</a>
-    </p>
-  </section>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="pill">Software Engineer · MSCS (Spring 2026)</div>
+        <h1>Building reliable, high-performance systems & intelligent tooling.</h1>
+        <p class="lead">C++/Python developer with 5G NR/RRC simulation and automation experience. Ex-Nokia: boosted FSM workflow efficiency by 40% and co-built an NLP ChatBot to streamline internal support.</p>
+        <div class="stack" style="margin:14px 0">
+          <span class="pill">C++</span><span class="pill">Python</span><span class="pill">GTest</span>
+          <span class="pill">Pytest</span><span class="pill">Jenkins</span><span class="pill">Docker</span><span class="pill">Wireshark</span>
+        </div>
+        <div class="stack">
+          <a class="btn" href="mailto:swathiblrs@gmail.com">✉️ Email</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/swabs" target="_blank" rel="noreferrer">in LinkedIn</a>
+          <a class="btn secondary" href="https://github.com/swathiblrs" target="_blank" rel="noreferrer">🐙 GitHub</a>
+          <a class="btn secondary" href="#resume">📄 Résumé</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 .4rem">Quick Highlights</h3>
+        <ul style="margin:.2rem 0 0 1.1rem;color:#c7d4e5">
+          <li>5G simulator modules · FSM design · observability</li>
+          <li>CI/CD: Jenkins · Docker · Kubernetes</li>
+          <li>NLP ChatBot for internal support (Nokia)</li>
+          <li>Open to SWE, automation & applied-AI roles</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid c3">
+        <article class="card">
+          <h3 style="margin:.2rem 0">5G NR/RRC Simulator</h3>
+          <p class="lead">FSM-based flows aligned with 3GPP; +5% throughput and +20% stability.</p>
+          <div class="stack"><span class="pill">C++</span><span class="pill">GTest</span><span class="pill">Wireshark</span></div>
+        </article>
+        <article class="card">
+          <h3 style="margin:.2rem 0">Nokia Internal ChatBot</h3>
+          <p class="lead">NLP-powered bot to answer routine queries and fetch docs; improved support responsiveness.</p>
+          <div class="stack"><span class="pill">Python</span><span class="pill">NLP</span><span class="pill">FastAPI</span></div>
+        </article>
+        <article class="card">
+          <h3 style="margin:.2rem 0">VANET Clustering Study</h3>
+          <p class="lead">Protocol evaluation & visualization; documentation and reproducible scripts.</p>
+          <div class="stack"><span class="pill">Python</span><span class="pill">NS2</span><span class="pill">Pandas</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card">
+        <div class="grid c2">
+          <div>
+            <strong>Programming</strong>
+            <p class="lead">C/C++, Python, Java, Kotlin</p>
+            <strong>Testing/Frameworks</strong>
+            <p class="lead">Pytest, Google Test, REST APIs</p>
+            <strong>DevOps</strong>
+            <p class="lead">Jenkins, Docker, Kubernetes</p>
+          </div>
+          <div>
+            <strong>Databases</strong>
+            <p class="lead">MySQL, PostgreSQL, MongoDB, Redis</p>
+            <strong>Tools</strong>
+            <p class="lead">AWS, Git, Jira, Wireshark, Valgrind, Coverity</p>
+            <strong>Domain</strong>
+            <p class="lead">5G NR, RRC, LTE, 3GPP, Simulation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <article class="card">
+        <header style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div><strong>Nokia</strong> · Software Engineer</div>
+          <div style="color:#9fb0c3">Jul 2023 – Aug 2025</div>
+        </header>
+        <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
+          <li>Developed 5G simulator features; FSM workflows improved efficiency by 40%.</li>
+          <li>Enhanced re-establishment handling; stability +20%, performance +5%.</li>
+          <li>CI/CD with Docker/Kubernetes/Jenkins; deep dives with Wireshark/Valgrind.</li>
+          <li>Co-built internal NLP ChatBot for support automation.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="resume">
+      <h2>Résumé</h2>
+      <div class="card">
+        <p class="lead">Link your latest résumé PDF here:</p>
+        <a class="btn secondary" href="#" target="_blank" rel="noreferrer">Download Résumé</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p class="lead">Email: <a href="mailto:swathiblrs@gmail.com">swathiblrs@gmail.com</a> · LinkedIn: <a href="https://www.linkedin.com/in/swabs" target="_blank">/in/swabs</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Swathi B S · Hosted on GitHub Pages</div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
