@@ -4,39 +4,68 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Swathi B S · Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#0b1020; --card:#11162a; --muted:#9fb0c3; --text:#eef3fb;
-      --brand:#7c5cff; --accent:#22d3a9; --ring:rgba(124,92,255,.4);
+      --brand:#7c5cff; --accent:#22d3a9; --stroke:rgba(255,255,255,.08);
+      --blue:#3b82f6; --github:#2b2f36; --resume:#60a5fa;
     }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,Segoe UI,Roboto,Arial}
-    a{color:inherit}
+    a{color:inherit;text-decoration:none}
     .container{max-width:1050px;margin:auto;padding:24px}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--stroke)}
     nav{display:flex;justify-content:space-between;align-items:center}
     .brand{font-weight:800;display:flex;gap:.6rem;align-items:center}
     .dot{width:.75rem;height:.75rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent))}
-    .nav a{padding:.6rem .8rem;border-radius:.7rem;color:var(--muted);text-decoration:none}
+    .nav a{padding:.6rem .8rem;border-radius:.7rem;color:var(--muted)}
     .nav a:hover{background:rgba(255,255,255,.07);color:var(--text)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
-    h1{font-size:clamp(28px,4vw,46px);line-height:1.15;margin:.3rem 0 1rem}
-    .lead{color:var(--muted);font-size:18px}
-    .btn{display:inline-flex;gap:.6rem;align-items:center;padding:.75rem 1rem;border-radius:12px;text-decoration:none;background:var(--brand);color:#fff;font-weight:600;box-shadow:0 10px 30px rgba(124,92,255,.25)}
-    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.15)}
-    .stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
-    .pill{padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--muted);font-size:12px}
     section{padding:26px 0}
     h2{font-size:clamp(22px,3vw,28px);margin:0 0 .6rem}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:18px}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;padding:18px;transition:.2s}
+    .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.35)}
     .grid{display:grid;gap:16px}
     .grid.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    footer{border-top:1px solid rgba(255,255,255,.07);color:var(--muted);padding:24px 0;margin-top:24px}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid.c2{grid-template-columns:1fr}.grid.c3{grid-template-columns:1fr 1fr}}
+    .lead{color:var(--muted);font-size:18px}
+    .stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+    .pill{padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--muted);font-size:12px}
+    footer{border-top:1px solid var(--stroke);color:var(--muted);padding:24px 0;margin-top:24px;text-align:center}
+
+    /* --- HERO like your reference --- */
+    .hero{
+      display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:center;
+      padding:32px 0 12px;
+    }
+    .hero-media{
+      background:var(--card);border:1px solid var(--stroke);border-radius:26px;
+      padding:20px;display:flex;align-items:center;justify-content:center;min-height:280px;
+    }
+    .hero-media img{max-width:100%;height:auto;border-radius:18px;display:block}
+    .hero-title{font-size:clamp(40px,7vw,72px);line-height:1.02;margin:0 0 12px;font-weight:800}
+    .hello-pill{display:inline-block;background:rgba(255,255,255,.06);border:1px solid var(--stroke);color:var(--muted);padding:.35rem .65rem;border-radius:999px;margin-bottom:10px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;font-weight:700;border:1px solid var(--stroke);transition:.2s}
+    .btn:hover{transform:translateY(-1px);opacity:.95}
+    .btn.gh{background:var(--github)}
+    .btn.li{background:var(--blue)}
+    .btn.cv{background:var(--resume);color:#061428}
+    .hero-small{color:var(--muted);margin-top:6px}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero-title{text-align:center}
+      .hero-small{text-align:center}
+      .cta{justify-content:center}
+      .hero-media{max-width:520px;margin:0 auto}
+      .grid.c2{grid-template-columns:1fr}
+      .grid.c3{grid-template-columns:1fr 1fr}
+    }
     @media (max-width:640px){.grid.c3{grid-template-columns:1fr}}
   </style>
 </head>
@@ -56,34 +85,37 @@
   </header>
 
   <main class="container">
+    <!-- HERO: big “Hey, I’m …” with three buttons -->
     <section class="hero">
+      <div class="hero-media">
+        <!-- Optional image. Upload a file named hero.png to your repo root to show it. -->
+        <img src="hero.png" alt="Illustration / photo of Swathi" onerror="this.style.display='none'">
+      </div>
+
       <div>
-        <div class="pill">Software Engineer</div>
-        <p class="hello">Hello! <span aria-hidden="true">👋</span></p>
-        <h1>I'm <span style="font-weight:800">Swathi Bangalore Satish</span>,</h1>
-        <p class="lead">C++/Python developer with 5G NR/RRC simulation and automation experience. Ex-Nokia: boosted FSM workflow efficiency by 40% and co-built an NLP ChatBot to streamline internal support.</p>
-        <div class="stack" style="margin:14px 0">
+        <span class="hello-pill">Hello! 👋</span>
+        <h1 class="hero-title">Hey, I'm Swathi!</h1>
+        <p class="hero-small">Software Engineer</p>
+
+        <p class="lead" style="margin-top:8px">
+          C++/Python developer with 5G NR/RRC simulation and automation experience. Ex-Nokia:
+          boosted FSM workflow efficiency by 40% and co-built an NLP ChatBot to streamline internal support.
+        </p>
+
+        <div class="stack">
           <span class="pill">C++</span><span class="pill">Python</span><span class="pill">GTest</span>
           <span class="pill">Pytest</span><span class="pill">Jenkins</span><span class="pill">Docker</span><span class="pill">Wireshark</span>
         </div>
-        <div class="stack">
-          <a class="btn" href="mailto:swathiblrs@gmail.com">✉️ Email</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/swabs" target="_blank" rel="noreferrer">in LinkedIn</a>
-          <a class="btn secondary" href="https://github.com/swathiblrs" target="_blank" rel="noreferrer">🐙 GitHub</a>
-          <a class="btn secondary" href="#resume">📄 Résumé</a>
+
+        <div class="cta">
+          <a class="btn gh" href="https://github.com/swathiblrs" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn li" href="https://www.linkedin.com/in/swabs" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn cv" href="#" target="_blank" rel="noreferrer">Résumé</a>
         </div>
-      </div>
-      <div class="card">
-        <h3 style="margin:0 0 .4rem">Quick Highlights</h3>
-        <ul style="margin:.2rem 0 0 1.1rem;color:#c7d4e5">
-          <li>5G simulator modules · FSM design · observability</li>
-          <li>CI/CD: Jenkins · Docker · Kubernetes</li>
-          <li>NLP ChatBot for internal support (Nokia)</li>
-          <li>Open to SWE, automation & applied-AI roles</li>
-        </ul>
       </div>
     </section>
 
+    <!-- PROJECTS (unchanged content) -->
     <section id="projects">
       <h2>Projects</h2>
       <div class="grid c3">
@@ -105,6 +137,7 @@
       </div>
     </section>
 
+    <!-- SKILLS (unchanged content) -->
     <section id="skills">
       <h2>Skills</h2>
       <div class="card">
@@ -129,6 +162,7 @@
       </div>
     </section>
 
+    <!-- EXPERIENCE (unchanged content) -->
     <section id="experience">
       <h2>Experience</h2>
       <article class="card">
@@ -145,14 +179,16 @@
       </article>
     </section>
 
+    <!-- RESUME (unchanged content) -->
     <section id="resume">
       <h2>Résumé</h2>
       <div class="card">
         <p class="lead">Link your latest résumé PDF here:</p>
-        <a class="btn secondary" href="#" target="_blank" rel="noreferrer">Download Résumé</a>
+        <a class="btn cv" href="#" target="_blank" rel="noreferrer">Download Résumé</a>
       </div>
     </section>
 
+    <!-- CONTACT (unchanged content) -->
     <section id="contact">
       <h2>Contact</h2>
       <div class="card">
