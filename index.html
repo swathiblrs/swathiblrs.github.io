@@ -104,6 +104,59 @@
 }
 .exp-list li{ margin:.28rem 0; }
 
+    /* ===== SKILLS (left rail + four columns) ===== */
+.skills-section{
+  padding:64px 0;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:28px;
+}
+
+.skills-rail{
+  color:#3b82f6;              /* accent blue */
+  letter-spacing:.18em;
+  font-weight:800;
+  font-size:14px;
+  margin:6px 0 0;
+}
+
+.skills-columns{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:28px;
+}
+
+.skills-col h3{
+  margin:0 0 8px;
+  font-size:18px;
+  font-weight:700;
+  color:var(--text);
+}
+
+.skills-col ul{
+  list-style:none;
+  padding:0; margin:0;
+}
+
+.skills-col li{
+  color:var(--muted);
+  line-height:1.9;
+  font-size:16px;
+}
+
+/* Responsive */
+@media (max-width:1100px){
+  .skills-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .skills-grid{grid-template-columns:1fr}
+  .skills-columns{grid-template-columns:1fr}
+}
+
     @media (max-width:900px){
       .hero{grid-template-columns:1fr}
       .hero-title{text-align:center}
@@ -192,32 +245,67 @@
     </section>
 
     <!-- SKILLS (unchanged content) -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="card">
-        <div class="grid c2">
-          <div>
-            <strong>Programming</strong>
-            <p class="lead">C/C++, Python, Java, Kotlin</p>
-            <strong>Testing/Frameworks</strong>
-            <p class="lead">Pytest, Google Test, REST APIs</p>
-            <strong>DevOps</strong>
-            <p class="lead">Jenkins, Docker, Kubernetes</p>
-          </div>
-          <div>
-            <strong>Databases</strong>
-            <p class="lead">MySQL, PostgreSQL, MongoDB, Redis</p>
-            <strong>Tools</strong>
-            <p class="lead">AWS, Git, Jira, Wireshark, Valgrind, Coverity</p>
-            <strong>Domain</strong>
-            <p class="lead">5G NR, RRC, LTE, 3GPP, Simulation</p>
-          </div>
-        </div>
-      </div>
-    </section>
-<section id="experience">
-  <h2>Experience</h2>
+    <section id="skills" class="skills-section">
+  <div class="skills-grid">
+    <!-- Left rail -->
+    <h2 class="skills-rail">SKILLS</h2>
 
+    <!-- Right content: 4 columns -->
+    <div class="skills-columns">
+      <div class="skills-col">
+        <h3>LANGUAGES</h3>
+        <ul>
+          <li>C / C++</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>Kotlin</li>
+          <li>SQL</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </div>
+
+      <div class="skills-col">
+        <h3>LIBRARIES/FRAMEWORKS</h3>
+        <ul>
+          <li>Google Test (GTest)</li>
+          <li>Pytest</li>
+          <li>FastAPI</li>
+          <li>Android</li>
+          <li>REST APIs</li>
+          <li>NS2</li>
+          <li>Pandas</li>
+        </ul>
+      </div>
+
+      <div class="skills-col">
+        <h3>TOOLS</h3>
+        <ul>
+          <li>Jenkins</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>Git</li>
+          <li>Wireshark</li>
+          <li>Valgrind</li>
+          <li>Coverity</li>
+          <li>Jira</li>
+          <li>AWS</li>
+        </ul>
+      </div>
+
+      <div class="skills-col">
+        <h3>DATABASES</h3>
+        <ul>
+          <li>MySQL</li>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>Redis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+   
   <!-- Nokia -->
   <article class="card exp-card">
     <header class="exp-header">
