@@ -86,6 +86,24 @@
     .btn.cv{background:var(--resume);color:#061428}
     .hero-small{color:var(--muted);font-size: 20px;font-weight: 500;margin-top:10px}
 
+    /* Experience layout tweaks */
+.exp-card { padding: 18px 18px 14px; }
+
+.exp-header{
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  margin-bottom:.25rem
+}
+.exp-title{ display:flex; gap:.5rem; flex-wrap:wrap; }
+.exp-loc{ color:var(--muted); font-weight:500; }
+.exp-dates{ color:var(--muted); font-style:italic; }
+
+.exp-list{
+  margin:.35rem 0 0 1.1rem;
+  color:#c7d4e5; /* matches your existing list color */
+  line-height:1.6;
+}
+.exp-list li{ margin:.28rem 0; }
+
     @media (max-width:900px){
       .hero{grid-template-columns:1fr}
       .hero-title{text-align:center}
@@ -197,23 +215,44 @@
         </div>
       </div>
     </section>
+<section id="experience">
+  <h2>Experience</h2>
 
-    <!-- EXPERIENCE (unchanged content) -->
-    <section id="experience">
-      <h2>Experience</h2>
-      <article class="card">
-        <header style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-          <div><strong>Nokia</strong> · Software Engineer</div>
-          <div style="color:#9fb0c3">Jul 2023 – Aug 2025</div>
-        </header>
-        <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
-          <li>Developed 5G simulator features; FSM workflows improved efficiency by 40%.</li>
-          <li>Enhanced re-establishment handling; stability +20%, performance +5%.</li>
-          <li>CI/CD with Docker/Kubernetes/Jenkins; deep dives with Wireshark/Valgrind.</li>
-          <li>Co-built internal NLP ChatBot for support automation.</li>
-        </ul>
-      </article>
-    </section>
+  <!-- Nokia -->
+  <article class="card exp-card">
+    <header class="exp-header">
+      <div class="exp-title">
+        <strong>Nokia</strong> · Software Engineer
+        <span class="exp-loc">Bangalore, India</span>
+      </div>
+      <div class="exp-dates">Mar 2022 – Apr 2025</div>
+    </header>
+    <ul class="exp-list">
+      <li>Developed features for a 5G simulator supporting Jio’s 5G rollout; built FSM-based RRC workflows aligned to 3GPP, improving efficiency by <strong>40%</strong>.</li>
+      <li>Enhanced post-handover recovery by extending FSM logic; validated with Pytest and Wireshark, improving re-establishment reliability.</li>
+      <li>Improved observability & stability by extending configs, integrating Docker–Kubernetes CI/CD, and fixing core dumps via Coverity, yielding ~<strong>20%</strong> stability gain.</li>
+      <li>Aligned NR-RRC to new 3GPP specs; applied design patterns to optimize message handling and gained ~<strong>5%</strong> processing performance.</li>
+      <li>Co-developed an NLP-powered internal ChatBot to automate routine queries and improve support responsiveness.</li>
+    </ul>
+  </article>
+
+  <!-- BEML -->
+  <article class="card exp-card">
+    <header class="exp-header">
+      <div class="exp-title">
+        <strong>BEML – Bharat Earth Movers Limited</strong> · Software Engineer Intern
+        <span class="exp-loc">Bangalore, India</span>
+      </div>
+      <div class="exp-dates">Jun 2021 – Sept 2021</div>
+    </header>
+    <ul class="exp-list">
+      <li>Built a real-time transit safety notification app (Android/Java/Kotlin) using Firebase Cloud Messaging for instant alerts.</li>
+      <li>Integrated RESTful APIs and async communication for scalable backend performance.</li>
+      <li>Optimized UI responsiveness with Material Design best practices.</li>
+      <li>Hands-on with mobile, IoT integration, client-server architecture, and cloud messaging.</li>
+    </ul>
+  </article>
+</section>
 
     <!-- RESUME (unchanged content) -->
     <section id="resume">
