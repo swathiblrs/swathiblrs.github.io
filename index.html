@@ -87,23 +87,59 @@
     .hero-small{color:var(--muted);font-size: 25px;font-weight: 500;margin-top:10px}
 
     /* Experience layout tweaks */
-.exp-card { padding: 18px 18px 14px; }
-
-.exp-header{
-  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
-  margin-bottom:.25rem
+/* ===== Experience: left rail + timeline ===== */
+.exp-section{padding:64px 0;border-top:1px solid rgba(255,255,255,.06)}
+.exp-grid{display:grid;grid-template-columns:220px 1fr;gap:28px}
+.exp-rail{
+  color:#4ba3ff;letter-spacing:.18em;font-weight:800;font-size:14px;
+  margin:10px 0 0;text-transform:uppercase
 }
-.exp-title{ display:flex; gap:.5rem; flex-wrap:wrap; }
-.exp-loc{ color:var(--muted); font-weight:500; }
-.exp-dates{ color:var(--muted); font-style:italic; }
 
-.exp-list{
-  margin:.35rem 0 0 1.1rem;
-  color:#c7d4e5; /* matches your existing list color */
-  line-height:1.6;
+.exp-timeline{position:relative}
+.exp-timeline::before{
+  content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,rgba(255,255,255,.10),rgba(255,255,255,.03));
 }
-.exp-list li{ margin:.28rem 0; }
 
+.exp-item{
+  position:relative;margin-left:28px;margin-bottom:22px;
+  background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;
+  transition:.25s;box-shadow:0 8px 24px rgba(0,0,0,.22)
+}
+.exp-item:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,0,0,.28)}
+
+.exp-dot{
+  position:absolute;left:-22px;top:22px;width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg,var(--brand),var(--accent));
+  box-shadow:0 0 0 4px rgba(124,92,255,.15)
+}
+
+.exp-head{
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px
+}
+.exp-company{font-size:20px;font-weight:700;color:var(--text)}
+.exp-role{font-size:15px;color:var(--muted)}
+.exp-loc{color:var(--muted)}
+.exp-dates{color:var(--muted);font-size:14px;white-space:nowrap}
+
+.exp-blurb{color:var(--muted);margin:6px 0 10px;line-height:1.7}
+
+.exp-list{margin:0;padding-left:18px;color:#d6e2f5;line-height:1.65}
+.exp-list li{margin:.3rem 0}
+.exp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.exp-tags span{
+  font-size:12px;color:#c7d4e5;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:999px
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .exp-grid{grid-template-columns:1fr}
+  .exp-rail{margin-bottom:8px}
+  .exp-timeline::before{left:6px}
+  .exp-item{margin-left:24px}
+  .exp-dot{left:-18px}
+}
     /* ===== SKILLS (left rail + four columns) ===== */
 .skills-section{
   padding:64px 0;
@@ -323,49 +359,68 @@
   }
 </style>
 
-  <section id="experience" class="exp-section">
+<!-- experience --> 
+<section id="experience" class="exp-section">
   <div class="exp-grid">
-    <!-- Left rail title -->
-    <h2 class="section-title">EXPERIENCE</h2>
+    <!-- Left rail -->
+    <h2 class="exp-rail">EXPERIENCE</h2>
 
     <!-- Right content -->
-    <div class="exp-content">
-  <!-- Nokia -->
-  <article class="card exp-card">
-    <header class="exp-header">
-      <div class="exp-title">
-        <strong>Nokia</strong> · Software Engineer
-        <span class="exp-loc">Bangalore, India</span>
-      </div>
-      <div class="exp-dates">Mar 2022 – Apr 2025</div>
-    </header>
-    <ul class="exp-list">
-      <li>Developed features for a 5G simulator supporting Jio’s 5G rollout; built FSM-based RRC workflows aligned to 3GPP, improving efficiency by <strong>40%</strong>.</li>
-      <li>Enhanced post-handover recovery by extending FSM logic; validated with Pytest and Wireshark, improving re-establishment reliability.</li>
-      <li>Improved observability & stability by extending configs, integrating Docker–Kubernetes CI/CD, and fixing core dumps via Coverity, yielding ~<strong>20%</strong> stability gain.</li>
-      <li>Aligned NR-RRC to new 3GPP specs; applied design patterns to optimize message handling and gained ~<strong>5%</strong> processing performance.</li>
-      <li>Co-developed an NLP-powered internal ChatBot to automate routine queries and improve support responsiveness.</li>
-    </ul>
-  </article>
+    <div class="exp-timeline">
 
-  <!-- BEML -->
-  <article class="card exp-card">
-    <header class="exp-header">
-      <div class="exp-title">
-        <strong>BEML – Bharat Earth Movers Limited</strong> · Software Engineer Intern
-        <span class="exp-loc">Bangalore, India</span>
-      </div>
-      <div class="exp-dates">Jun 2021 – Sept 2021</div>
-    </header>
-    <ul class="exp-list">
-      <li>Built a real-time transit safety notification app (Android/Java/Kotlin) using Firebase Cloud Messaging for instant alerts.</li>
-      <li>Integrated RESTful APIs and async communication for scalable backend performance.</li>
-      <li>Optimized UI responsiveness with Material Design best practices.</li>
-      <li>Hands-on with mobile, IoT integration, client-server architecture, and cloud messaging.</li>
-    </ul>
-  </article>
+      <!-- Nokia -->
+      <article class="exp-item card">
+        <div class="exp-dot" aria-hidden="true"></div>
+        <header class="exp-head">
+          <div>
+            <div class="exp-company">Nokia</div>
+            <div class="exp-role">Software Engineer · <span class="exp-loc">Bangalore, India</span></div>
+          </div>
+          <div class="exp-dates">Mar 2022 – Apr 2025</div>
+        </header>
+        <p class="exp-blurb">
+          Core work on 5G NR/RRC simulation and automation; improved reliability, performance, and developer tooling.
+        </p>
+        <ul class="exp-list">
+          <li>FSM-based RRC workflows aligned to 3GPP; ~<strong>40%</strong> efficiency gain.</li>
+          <li>Post-handover recovery improvements; validated with Pytest & Wireshark.</li>
+          <li>Observability & stability via config extensions, Docker–K8s CI/CD, Coverity (~<strong>20%</strong> stability).</li>
+          <li>Optimized message handling to latest 3GPP; ~<strong>5%</strong> processing boost.</li>
+          <li>NLP ChatBot to automate internal queries and speed support.</li>
+        </ul>
+        <div class="exp-tags">
+          <span>C++</span><span>Python</span><span>GTest</span><span>Pytest</span>
+          <span>Wireshark</span><span>Docker</span><span>Kubernetes</span><span>Jenkins</span><span>Coverity</span>
+        </div>
+      </article>
+
+      <!-- BEML -->
+      <article class="exp-item card">
+        <div class="exp-dot" aria-hidden="true"></div>
+        <header class="exp-head">
+          <div>
+            <div class="exp-company">BEML — Bharat Earth Movers Limited</div>
+            <div class="exp-role">Software Engineer Intern · <span class="exp-loc">Bangalore, India</span></div>
+          </div>
+          <div class="exp-dates">Jun 2021 – Sept 2021</div>
+        </header>
+        <p class="exp-blurb">
+          Mobile–cloud app for real-time transit safety notifications with scalable APIs and clean UI.
+        </p>
+        <ul class="exp-list">
+          <li>Android app (Java/Kotlin) with Firebase Cloud Messaging for instant alerts.</li>
+          <li>RESTful APIs + async flows for scalable performance.</li>
+          <li>Material Design tuned for responsiveness and UX.</li>
+        </ul>
+        <div class="exp-tags">
+          <span>Java</span><span>Kotlin</span><span>Android</span><span>Firebase FCM</span><span>REST APIs</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
 </section>
-
+    
       <!-- PROJECTS -->
 <section id="projects">
   <h2 class="section-title">PROJECTS</h2>
