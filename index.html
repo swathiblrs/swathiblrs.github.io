@@ -245,24 +245,55 @@
     </section>
 
     <!-- SKILLS (unchanged content) -->
-    <section id="skills">
-  <h2 class="section-title">Skills</h2>
+<section id="skills">
+  <h2 class="section-title">SKILLS</h2>
   <div class="skills-grid">
     <div>
-      <h3>Languages</h3>
-      <p>C / C++, Python, Java, Kotlin, SQL, HTML, CSS</p>
+      <h3>LANGUAGES</h3>
+      <ul>
+        <li>C / C++</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>Kotlin</li>
+        <li>SQL</li>
+        <li>HTML</li>
+        <li>CSS</li>
+      </ul>
     </div>
     <div>
-      <h3>Libraries / Frameworks</h3>
-      <p>Google Test (GTest), Pytest, FastAPI, Android, REST APIs, NS2, Pandas</p>
+      <h3>LIBRARIES / FRAMEWORKS</h3>
+      <ul>
+        <li>Google Test (GTest)</li>
+        <li>Pytest</li>
+        <li>FastAPI</li>
+        <li>Android</li>
+        <li>REST APIs</li>
+        <li>NS2</li>
+        <li>Pandas</li>
+      </ul>
     </div>
     <div>
-      <h3>Tools</h3>
-      <p>Jenkins, Docker, Kubernetes, Git, Wireshark, Valgrind, Coverity, Jira, AWS</p>
+      <h3>TOOLS</h3>
+      <ul>
+        <li>Jenkins</li>
+        <li>Docker</li>
+        <li>Kubernetes</li>
+        <li>Git</li>
+        <li>Wireshark</li>
+        <li>Valgrind</li>
+        <li>Coverity</li>
+        <li>Jira</li>
+        <li>AWS</li>
+      </ul>
     </div>
     <div>
-      <h3>Databases</h3>
-      <p>MySQL, PostgreSQL, MongoDB, Redis</p>
+      <h3>DATABASES</h3>
+      <ul>
+        <li>MySQL</li>
+        <li>PostgreSQL</li>
+        <li>MongoDB</li>
+        <li>Redis</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -272,10 +303,10 @@
     margin-top: 60px;
   }
   .section-title {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #4ba3ff; /* nice accent color */
+    color: #4ba3ff;
     margin-bottom: 20px;
   }
   .skills-grid {
@@ -284,16 +315,21 @@
     gap: 30px;
   }
   .skills-grid h3 {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: #9fb0c3;
     margin-bottom: 8px;
+    letter-spacing: 1px;
   }
-  .skills-grid p {
-    font-size: 13px; /* smaller text size */
-    color: #eef3fb;
-    line-height: 1.5;
+  .skills-grid ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
+  }
+  .skills-grid li {
+    font-size: 12px; /* smaller size */
+    color: #eef3fb;
+    margin-bottom: 6px;
   }
   @media (max-width: 900px) {
     .skills-grid {
