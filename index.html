@@ -46,7 +46,21 @@
       background:var(--card);border:1px solid var(--stroke);border-radius:26px;
       padding:20px;display:flex;align-items:center;justify-content:center;min-height:280px;
     }
-    .hero-media img{max-width:100%;height:auto;border-radius:18px;display:block}
+    
+    .hero-media img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 16px;
+  display: block;
+  margin: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
     .hero-title{font-size:clamp(32px,5.5vw,60px);line-height:1.1;margin:0 0 10px;font-weight:800}
     .hello-pill{display:inline-block;background:rgba(255,255,255,.06);border:1px solid var(--stroke);color:var(--muted);padding:.35rem .65rem;border-radius:999px;margin-bottom:10px}
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
