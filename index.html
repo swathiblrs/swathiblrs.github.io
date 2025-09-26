@@ -38,16 +38,18 @@
     footer{border-top:1px solid var(--stroke);color:var(--muted);padding:24px 0;margin-top:24px;text-align:center}
 
     /* --- HERO like your reference --- */
-    .hero{
-      display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:center;
-      padding:32px 0 12px;
-    }
-    .hero-media{
-      background:var(--card);border:1px solid var(--stroke);border-radius:26px;
-      padding:20px;display:flex;align-items:center;justify-content:center;min-height:280px;
-    }
-    
-    .hero-media img {
+   .hero-media {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 26px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.hero-media img {
   width: 100%;
   max-width: 380px;
   border-radius: 16px;
@@ -56,10 +58,17 @@
   animation: float 3s ease-in-out infinite;
 }
 
+/* Combined floating + mirroring */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: scaleX(-1) translateY(0px); /* mirrored + starting position */
+  }
+  50% {
+    transform: scaleX(-1) translateY(-8px); /* mirrored + floated up */
+  }
+  100% {
+    transform: scaleX(-1) translateY(0px); /* mirrored + back to start */
+  }
 }
     .hero-title{font-size:clamp(28px,4vw,45px);line-height:1.1;margin:0 0 10px;font-weight:800}
     .hello-pill{display:inline-block;background:rgba(255,255,255,.06);border:1px solid var(--stroke);color:var(--muted);padding:.35rem .65rem;border-radius:999px;margin-bottom:10px}
