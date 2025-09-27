@@ -40,6 +40,12 @@
     .pill{padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--muted);font-size:12px}
     footer{border-top:1px solid var(--stroke);color:var(--muted);padding:24px 0;margin-top:24px;text-align:center}
 
+    display: grid;
+grid-template-columns: 0.9fr 1.1fr;
+align-items: center;
+gap: 30px;
+padding: 10px 0 28px;
+    
     /* HOME (Hero + Background + Skills in one section) */
     #home{padding-top:34px}
     .hero{display:grid;grid-template-columns:0.9fr 1.1fr;align-items:center;gap:30px;padding:10px 0 28px}
@@ -266,15 +272,13 @@
     </section>
 
     <!-- EDUCATION -->
-    <section id="education">
-      <h2 class="section-title">EDUCATION</h2>
-
-<article class="card p-6 rounded-xl bg-[#1a1a1a] shadow-md">
-  <!-- Row: Logo + University Name -->
-  <div class="flex items-center gap-4 mb-3">
-    <img src="vtu-logo.jpeg" class="w-1 h-1 rounded-full">
+  <article class="card p-6 rounded-xl bg-[#1a1a1a] shadow-md">
+  <!-- Grid Row: Logo + University Name -->
+  <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 20px; padding: 10px 0 20px;">
+    <img src="vtu-logo.jpeg" style="width: 30px; height: 30px; border-radius: 50%;">
     <h3 class="text-xl font-bold">Visvesvaraya Technological University</h3>
   </div>
+
   <!-- Details Below -->
   <p class="text-sm text-gray-300">B.E in Computer Science & Engineering (2018 – 2022)</p>
   <p class="text-sm"><span class="font-semibold">GPA:</span> 8.9/10</p>
@@ -283,23 +287,6 @@
     Artificial Intelligence, Machine Learning, Object Oriented Design & Development
   </p>
 </article>
-      </section>
-
-     <div class="hero">
-        <div class="hero-media">
-          <!-- place hero.png in repo root -->
-          <img src="tu-logo.jpeg" alt="Illustration / photo of Swathi" onerror="this.style.display='none'">
-        </div>
-        <div>
-          <p class="hero-small">Visvesvaraya Technological University</p>
-           <p class="text-sm text-gray-300">B.E in Computer Science & Engineering (2018 – 2022)</p>
-    <p class="text-sm"><span class="font-semibold">GPA:</span> 8.9/10</p>
-    <p class="text-sm">
-      <span class="font-semibold">Courses:</span> Data Structures, Operating Systems, Database Management Systems, 
-      Artificial Intelligence, Machine Learning, Object Oriented Design & Development
-    </p>
-        </div>
-      </div>
     
     <!-- EDUCATION -->
 <section id="education">
