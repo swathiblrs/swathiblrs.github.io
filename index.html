@@ -221,24 +221,23 @@ padding: 10px 0 28px;
       </article>
     </section>
 
-    <section id="projects" class="space-y-6">
+  <section id="projects" class="space-y-6">
   <h2 class="section-title">PROJECTS</h2>
 
   <!-- VANET Project -->
-  <article class="grid grid-cols-[64px_1fr] gap-6 p-6 rounded-2xl bg-[#171a1f] ring-1 ring-white/5 shadow-[0_10px_30px_rgba(0,0,0,.45)]">
+  <article class="grid grid-cols-[48px_1fr] gap-4 p-5 rounded-2xl bg-[#171a1f] ring-1 ring-white/5 shadow-[0_8px_24px_rgba(0,0,0,.35)]">
     <!-- Icon -->
-    <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-black/40 ring-1 ring-white/10">
-      <!-- Simple network icon -->
-      <svg viewBox="0 0 24 24" class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" stroke-width="1.8">
+    <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-black/40 ring-1 ring-white/10">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" stroke-width="1.6">
         <path d="M3 12h18M12 3v18M8 8l8 8M8 16l8-8" />
       </svg>
     </div>
 
     <!-- Content -->
-    <div class="leading-relaxed">
-      <h3 class="text-2xl font-extrabold tracking-tight">Performance Analysis of VANET Clustering Routing Protocol</h3>
-      <p class="text-sm text-slate-400"><em>Jun 2021 – Jun 2022</em></p>
-      <p class="mt-2 text-[15px] text-slate-200">
+    <div class="leading-snug">
+      <h3 class="text-xl font-bold tracking-tight">Performance Analysis of VANET Clustering Routing Protocol</h3>
+      <p class="text-xs text-slate-400 mt-1"><em>Jun 2021 – Jun 2022</em></p>
+      <p class="mt-2 text-[14px] text-slate-200">
         Simulated a clustering-based <span class="hl">VANET</span> routing protocol in
         <span class="hl">NS-2</span> using <span class="hl">C++</span>, integrating
         <span class="hl">LORA_DCBF</span> for efficient forwarding and
@@ -248,7 +247,11 @@ padding: 10px 0 28px;
       </p>
     </div>
   </article>
+</section>
 
+<style>
+  .hl { color: #22d3ee; font-weight: 600; }
+</style>
   <!-- Bloom Filter Project -->
   <article class="grid grid-cols-[64px_1fr] gap-6 p-6 rounded-2xl bg-[#171a1f] ring-1 ring-white/5 shadow-[0_10px_30px_rgba(0,0,0,.45)]">
     <!-- Icon -->
