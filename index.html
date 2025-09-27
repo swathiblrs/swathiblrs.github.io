@@ -495,9 +495,44 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">© <span id="y"></span> Swathi B S · Hosted on GitHub Pages</div>
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+ <footer class="site-footer">
+  <p>© <span id="y"></span> Swathi Bangalore Satish. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="mailto:swathiblrs@gmail.com">Email</a>
+    <a href="https://github.com/swathiblrs" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/swabs" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  // Auto update year
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
+<style>
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: var(--muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 40px;
+}
+
+.footer-links {
+  margin-top: 8px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #4fc3f7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+</style>
 </body>
 </html>
