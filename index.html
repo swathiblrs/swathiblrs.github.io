@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Swathi Bangalore Satish · Portfolio</title>
+
+  <!-- Favicon (emoji) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍💻</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +29,7 @@
     .nav a{padding:.6rem .8rem;border-radius:.7rem;color:var(--muted)}
     .nav a:hover{background:rgba(255,255,255,.07);color:var(--text)}
     section{padding:26px 0}
-    h2{font-size:clamp(22px,3vw,28px);margin:0 0 .6rem}
+    h2.section-title{font-size:16px;font-weight:800;letter-spacing:.18em;color:#4ba3ff;margin:0 0 14px}
     .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;padding:18px;transition:.2s}
     .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.35)}
     .grid{display:grid;gap:16px}
@@ -38,500 +40,266 @@
     .pill{padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--muted);font-size:12px}
     footer{border-top:1px solid var(--stroke);color:var(--muted);padding:24px 0;margin-top:24px;text-align:center}
 
-  .hero {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr; /* image left, text right */
-  align-items: center; /* vertically center text with image */
-  gap: 30px;
-  padding: 40px 0;
-}
-    /* --- HERO like your reference --- */
-   .hero-media {
-  border: 1px solid var(--stroke);
-  border-radius: 26px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 280px;
-}
-
-.hero-media img {
-  width: 100%;
-  max-width: 380px;
-  border-radius: 16px;
-  display: block;
-  margin-left: 0;
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Combined floating + mirroring */
-@keyframes float {
-  0% {
-    transform: scaleX(-1) translateY(0px); /* mirrored + starting position */
-  }
-  50% {
-    transform: scaleX(-1) translateY(-8px); /* mirrored + floated up */
-  }
-  100% {
-    transform: scaleX(-1) translateY(0px); /* mirrored + back to start */
-  }
-}
+    /* HOME (Hero + Background + Skills in one section) */
+    #home{padding-top:34px}
+    .hero{display:grid;grid-template-columns:0.9fr 1.1fr;align-items:center;gap:30px;padding:10px 0 28px}
+    .hero-media{border-radius:26px;padding:20px;display:flex;align-items:center;justify-content:flex-start;min-height:280px;background:var(--card);border:1px solid var(--stroke)}
+    .hero-media img{width:100%;max-width:380px;border-radius:16px;display:block;margin-left:0;animation:float 3s ease-in-out infinite}
+    @keyframes float{0%{transform:scaleX(-1) translateY(0)}50%{transform:scaleX(-1) translateY(-8px)}100%{transform:scaleX(-1) translateY(0)}}
     .hero-title{font-size:clamp(28px,4vw,45px);line-height:1.1;margin:0 0 10px;font-weight:800}
-    .hello-pill{display:inline-block;background:rgba(255,255,255,.06);border:1px solid var(--stroke);color:var(--muted);padding:.35rem .65rem;border-radius:999px;margin-bottom:10px}
+    .hero-small{color:var(--muted);font-size:22px;font-weight:500;margin-top:10px}
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;font-weight:700;border:1px solid var(--stroke);transition:.2s}
     .btn:hover{transform:translateY(-1px);opacity:.95}
     .btn.gh{background:var(--github)}
     .btn.li{background:var(--blue)}
     .btn.cv{background:var(--resume);color:#061428}
-    .hero-small{color:var(--muted);font-size: 25px;font-weight: 500;margin-top:10px}
 
-    /* Experience layout tweaks */
-/* ===== Experience: left rail + timeline ===== */
-.exp-section{padding:64px 0;border-top:1px solid rgba(255,255,255,.06)}
-.exp-grid{display:grid;grid-template-columns:220px 1fr;gap:28px}
-.exp-rail{
-  color:#4ba3ff;letter-spacing:.18em;font-weight:800;font-size:14px;
-  margin:10px 0 0;text-transform:uppercase
-}
+    /* Background blurb */
+    .background-card{margin-top:8px}
+    .status{display:flex;align-items:center;gap:10px;margin-top:8px}
+    .status-dot{width:12px;height:12px;border-radius:999px;background:#22d3a9;box-shadow:0 0 0 6px rgba(34,211,169,.12)}
 
-.exp-timeline{position:relative}
-.exp-timeline::before{
-  content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;
-  background:linear-gradient(to bottom,rgba(255,255,255,.10),rgba(255,255,255,.03));
-}
+    /* Skills columns (inside Home) */
+    .skills-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:10px}
+    .skills-col h3{margin:0 0 8px;font-size:14px;font-weight:700;color:#9fb0c3;letter-spacing:.06em}
+    .skills-col ul{list-style:none;margin:0;padding:0}
+    .skills-col li{color:#eef3fb;line-height:1.9;font-size:13px}
 
-.exp-item{
-  position:relative;margin-left:28px;margin-bottom:22px;
-  background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;
-  transition:.25s;box-shadow:0 8px 24px rgba(0,0,0,.22)
-}
-.exp-item:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,0,0,.28)}
+    /* Experience (unchanged, still its own section) */
+    .exp-section{padding:64px 0;border-top:1px solid rgba(255,255,255,.06)}
+    .exp-grid{display:grid;grid-template-columns:220px 1fr;gap:28px}
+    .exp-rail{color:#3b82f6;letter-spacing:.18em;font-weight:800;font-size:14px;margin:6px 0 0}
+    .exp-timeline{position:relative}
+    .exp-timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,rgba(255,255,255,.10),rgba(255,255,255,.03))}
+    .exp-item{position:relative;margin-left:28px;margin-bottom:22px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;transition:.25s;box-shadow:0 8px 24px rgba(0,0,0,.22)}
+    .exp-item:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,0,0,.28)}
+    .exp-dot{position:absolute;left:-22px;top:22px;width:12px;height:12px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent));box-shadow:0 0 0 4px rgba(124,92,255,.15)}
+    .exp-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+    .exp-company{font-size:20px;font-weight:700;color:var(--text)}
+    .exp-role{font-size:15px;color:var(--muted)}
+    .exp-loc{color:var(--muted)}
+    .exp-dates{color:var(--muted);font-size:14px;white-space:nowrap}
+    .exp-blurb{color:var(--muted);margin:6px 0 10px;line-height:1.7}
+    .exp-list{margin:0;padding-left:18px;color:#d6e2f5;line-height:1.65}
+    .exp-list li{margin:.3rem 0}
+    .exp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .exp-tags span{font-size:12px;color:#c7d4e5;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:999px}
 
-.exp-dot{
-  position:absolute;left:-22px;top:22px;width:12px;height:12px;border-radius:999px;
-  background:linear-gradient(135deg,var(--brand),var(--accent));
-  box-shadow:0 0 0 4px rgba(124,92,255,.15)
-}
+    /* Footer */
+    .site-footer{text-align:center;padding:20px 0;font-size:14px;color:var(--muted);border-top:1px solid rgba(255,255,255,.05);margin-top:40px}
+    .footer-links{margin-top:8px}
+    .footer-links a{margin:0 10px;color:#4fc3f7;font-weight:500}
+    .footer-links a:hover{text-decoration:underline}
 
-.exp-head{
-  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px
-}
-.exp-company{font-size:20px;font-weight:700;color:var(--text)}
-.exp-role{font-size:15px;color:var(--muted)}
-.exp-loc{color:var(--muted)}
-.exp-dates{color:var(--muted);font-size:14px;white-space:nowrap}
-
-.exp-blurb{color:var(--muted);margin:6px 0 10px;line-height:1.7}
-
-.exp-list{margin:0;padding-left:18px;color:#d6e2f5;line-height:1.65}
-.exp-list li{margin:.3rem 0}
-.exp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.exp-tags span{
-  font-size:12px;color:#c7d4e5;background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:999px
-}
-
-/* Responsive */
-@media (max-width:900px){
-  .exp-grid{grid-template-columns:1fr}
-  .exp-rail{margin-bottom:8px}
-  .exp-timeline::before{left:6px}
-  .exp-item{margin-left:24px}
-  .exp-dot{left:-18px}
-}
-    /* ===== SKILLS (left rail + four columns) ===== */
-.skills-section{
-  padding:64px 0;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
-.skills-grid{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:28px;
-}
-
-.skills-rail{
-  color:#3b82f6;              /* accent blue */
-  letter-spacing:.18em;
-  font-weight:800;
-  font-size:14px;
-  margin:6px 0 0;
-}
-
-.skills-columns{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:28px;
-}
-
-.skills-col h3{
-  margin:0 0 8px;
-  font-size:18px;
-  font-weight:700;
-  color:var(--text);
-}
-
-.skills-col ul{
-  list-style:none;
-  padding:0; margin:0;
-}
-
-.skills-col li{
-  color:var(--muted);
-  line-height:1.9;
-  font-size:16px;
-}
-
-/* Responsive */
-@media (max-width:1100px){
-  .skills-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media (max-width:640px){
-  .skills-grid{grid-template-columns:1fr}
-  .skills-columns{grid-template-columns:1fr}
-}
-
+    /* Responsive */
+    @media (max-width:1100px){.skills-columns{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (max-width:900px){
       .hero{grid-template-columns:1fr}
-      .hero-title{text-align:center}
-      .hero-small{text-align:center}
+      .hero-title,.hero-small{text-align:center}
       .cta{justify-content:center}
       .hero-media{max-width:520px;margin:0 auto}
-      .grid.c2{grid-template-columns:1fr}
-      .grid.c3{grid-template-columns:1fr 1fr}
+      .exp-grid{grid-template-columns:1fr}
+      .exp-timeline::before{left:6px}
+      .exp-item{margin-left:24px}
+      .exp-dot{left:-18px}
     }
-    @media (max-width:640px){.grid.c3{grid-template-columns:1fr}}
+    @media (max-width:640px){.skills-columns{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <div class="brand">Swathi Bangalore Satish</div>
+        <div class="brand"><span class="dot"></span> Swathi Bangalore Satish</div>
         <div class="nav">
           <a href="#home">Home</a>
           <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
-          <a href="#certificates">Certificates</a>
+          <a href="#education">Education</a>
+          <a href="#certifications">Certificates</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- HERO: big “Hey, I’m …” with three buttons 
-    <section class="hero">
-      <div class="hero-media"-->
+    <!-- HOME = Hero + Background + Skills -->
     <section id="home">
       <!-- Hero -->
       <div class="hero">
         <div class="hero-media">
-        <!-- Optional image. Upload a file named hero.png to your repo root to show it. -->
-        <img src="hero.png" alt="Illustration / photo of Swathi" onerror="this.style.display='none'">
-      </div>
-      </div>
-
-      <div>
-        <h1 class="hero-title">Hey!</h1>
-        <h1 class="hero-title">I'm Swathi,</h1>
-        <p class="hero-small">Software Engineer 👩‍💻</p>
-
-        <div class="cta">
-          <a class="btn gh" href="https://github.com/swathiblrs" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn li" href="https://www.linkedin.com/in/swabs" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn cv" href="#" target="_blank" rel="noreferrer">Résumé</a>
+          <!-- place hero.png in repo root -->
+          <img src="hero.png" alt="Illustration / photo of Swathi" onerror="this.style.display='none'">
         </div>
-      </div>
-    </div>
-
-<!--background
-<section id="home" class="background-section"-->
-  <h2 class="section-title">BACKGROUND</h2>
-  <div class="background-content">
-    <p>
-      I am a software engineer with 3+ years of experience in building scalable, high-performance applications.
-      I specialize in C++/Python development, 5G NR/RRC simulation, and automation workflows.
-    </p>
-    <p>
-      My passion lies in solving complex engineering problems, streamlining processes, and collaborating
-      with cross-functional teams to deliver impactful solutions. I constantly explore new technologies
-      and best practices to improve my craft and stay up-to-date with industry trends.
-    </p>
-    <p><strong>Outside of work</strong>, I enjoy hiking, exploring new places, and learning about design & technology trends.</p>
-    <div class="status">
-      <span class="status-dot"></span>
-      <span class="status-text"><strong>Currently seeking Software Engineering / Full-Stack opportunities.</strong></span>
-    </div>
-  </div>
-
-<!-- SKILLS -->
-  <h2 class="section-title">SKILLS</h2>
-  <div class="skills-grid">
-    <div>
-      <h3>LANGUAGES</h3>
-      <ul>
-        <li>C / C++</li>
-        <li>Python</li>
-        <li>Java</li>
-        <li>Kotlin</li>
-        <li>SQL</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-    </div>
-    <div>
-      <h3>LIBRARIES / FRAMEWORKS</h3>
-      <ul>
-        <li>Google Test (GTest)</li>
-        <li>Pytest</li>
-        <li>FastAPI</li>
-        <li>Android</li>
-        <li>REST APIs</li>
-        <li>NS2</li>
-        <li>Pandas</li>
-      </ul>
-    </div>
-    <div>
-      <h3>TOOLS</h3>
-      <ul>
-        <li>Jenkins</li>
-        <li>Docker</li>
-        <li>Kubernetes</li>
-        <li>Git</li>
-        <li>Wireshark</li>
-        <li>Valgrind</li>
-        <li>Coverity</li>
-        <li>Jira</li>
-        <li>AWS</li>
-      </ul>
-    </div>
-    <div>
-      <h3>DATABASES</h3>
-      <ul>
-        <li>MySQL</li>
-        <li>PostgreSQL</li>
-        <li>MongoDB</li>
-        <li>Redis</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<style>
-  #skills {
-    margin-top: 60px;
-  }
-  .section-title {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #4ba3ff;
-    margin-bottom: 20px;
-  }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-  }
-  .skills-grid h3 {
-    font-size: 13px;
-    font-weight: 600;
-    color: #9fb0c3;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-  }
-  .skills-grid ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .skills-grid li {
-    font-size: 12px; /* smaller size */
-    color: #eef3fb;
-    margin-bottom: 6px;
-  }
-  @media (max-width: 900px) {
-    .skills-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (max-width: 640px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
-
-<!-- experience --> 
-<section id="experience" class="exp-section">
-  <div class="exp-grid">
-    <!-- Left rail -->
-    <h2 class="exp-rail">EXPERIENCE</h2>
-
-    <!-- Right content -->
-    <div class="exp-timeline">
-
-      <!-- Nokia -->
-      <article class="exp-item card">
-        <div class="exp-dot" aria-hidden="true"></div>
-        <header class="exp-head">
-          <div>
-            <div class="exp-company">Nokia</div>
-            <div class="exp-role">Software Engineer · <span class="exp-loc">Bangalore, India</span></div>
+        <div>
+          <h1 class="hero-title">Hey!</h1>
+          <h1 class="hero-title">I'm Swathi,</h1>
+          <p class="hero-small">Software Engineer 👩‍💻</p>
+          <div class="cta">
+            <a class="btn gh" href="https://github.com/swathiblrs" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn li" href="https://www.linkedin.com/in/swabs" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn cv" href="#" target="_blank" rel="noreferrer">Résumé</a>
           </div>
-          <div class="exp-dates">Mar 2022 – Apr 2025</div>
-        </header>
-        <p class="exp-blurb">
-          Core work on 5G NR/RRC simulation and automation; improved reliability, performance, and developer tooling.
-        </p>
-        <ul class="exp-list">
-          <li>FSM-based RRC workflows aligned to 3GPP; ~<strong>40%</strong> efficiency gain.</li>
-          <li>Post-handover recovery improvements; validated with Pytest & Wireshark.</li>
-          <li>Observability & stability via config extensions, Docker–K8s CI/CD, Coverity (~<strong>20%</strong> stability).</li>
-          <li>Optimized message handling to latest 3GPP; ~<strong>5%</strong> processing boost.</li>
-          <li>NLP ChatBot to automate internal queries and speed support.</li>
-        </ul>
-        <div class="exp-tags">
-          <span>C++</span><span>Python</span><span>GTest</span><span>Pytest</span>
-          <span>Wireshark</span><span>Docker</span><span>Kubernetes</span><span>Jenkins</span><span>Coverity</span>
         </div>
+      </div>
+
+      <!-- Background -->
+      <h2 class="section-title">BACKGROUND</h2>
+      <div class="card background-card">
+        <p>
+          I am a software engineer with 3+ years of experience in building scalable, high-performance applications.
+          I specialize in C++/Python development, 5G NR/RRC simulation, and automation workflows.
+        </p>
+        <p>
+          I enjoy solving complex engineering problems and collaborating across teams to deliver impact. I keep up with
+          modern tooling and best practices to constantly improve my craft.
+        </p>
+        <p><strong>Outside of work</strong>, I enjoy hiking, exploring new places, and learning about design & technology trends.</p>
+        <div class="status">
+          <span class="status-dot"></span>
+          <span class="status-text"><strong>Currently seeking Software Engineering / Full-Stack opportunities.</strong></span>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <h2 class="section-title" style="margin-top:22px;">SKILLS</h2>
+      <div class="skills-columns">
+        <div class="skills-col">
+          <h3>LANGUAGES</h3>
+          <ul>
+            <li>C / C++</li><li>Python</li><li>Java</li><li>Kotlin</li><li>SQL</li><li>HTML</li><li>CSS</li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <h3>LIBRARIES / FRAMEWORKS</h3>
+          <ul>
+            <li>Google Test (GTest)</li><li>Pytest</li><li>FastAPI</li><li>Android</li><li>REST APIs</li><li>NS2</li><li>Pandas</li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <h3>TOOLS</h3>
+          <ul>
+            <li>Jenkins</li><li>Docker</li><li>Kubernetes</li><li>Git</li><li>Wireshark</li><li>Valgrind</li><li>Coverity</li><li>Jira</li><li>AWS</li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <h3>DATABASES</h3>
+          <ul>
+            <li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (separate section; “Projects” in navbar goes here) -->
+    <section id="projects">
+      <h2 class="section-title">PROJECTS</h2>
+
+      <article class="card">
+        <h3>Performance Analysis of VANET Clustering Routing Protocol</h3>
+        <p class="lead"><em>Jun 2021 – Jun 2022</em></p>
+        <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
+          <li>Simulated a clustering-based VANET routing protocol in NS-2 using C++, integrating LORA_DCBF for efficient forwarding and SHA for secure communication.</li>
+          <li>Used Python to analyze & visualize PDR, latency, and routing overhead.</li>
+        </ul>
       </article>
 
-      <!-- BEML -->
-      <article class="exp-item card">
-        <div class="exp-dot" aria-hidden="true"></div>
-        <header class="exp-head">
-          <div>
-            <div class="exp-company">BEML — Bharat Earth Movers Limited</div>
-            <div class="exp-role">Software Engineer Intern · <span class="exp-loc">Bangalore, India</span></div>
-          </div>
-          <div class="exp-dates">Jun 2021 – Sept 2021</div>
-        </header>
-        <p class="exp-blurb">
-          Mobile–cloud app for real-time transit safety notifications with scalable APIs and clean UI.
-        </p>
-        <ul class="exp-list">
-          <li>Android app (Java/Kotlin) with Firebase Cloud Messaging for instant alerts.</li>
-          <li>RESTful APIs + async flows for scalable performance.</li>
-          <li>Material Design tuned for responsiveness and UX.</li>
+      <article class="card" style="margin-top:16px;">
+        <h3>Synergetic Use of Bloom Filter in Error Detection & Correction</h3>
+        <p class="lead"><em>Jan 2021 – Mar 2022</em></p>
+        <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
+          <li>Built a Java-based error detection system using Bloom filters, optimizing set validation with minimal false positives.</li>
+          <li>Showed Bloom-filter + ECC synergy by tuning hash functions and measuring space-time trade-offs to improve reliability.</li>
         </ul>
-        <div class="exp-tags">
-          <span>Java</span><span>Kotlin</span><span>Android</span><span>Firebase FCM</span><span>REST APIs</span>
-        </div>
       </article>
+    </section>
 
+    <!-- EXPERIENCE -->
+    <section id="experience" class="exp-section">
+      <div class="exp-grid">
+        <h2 class="exp-rail">EXPERIENCE</h2>
+        <div class="exp-timeline">
+          <article class="exp-item card">
+            <div class="exp-dot" aria-hidden="true"></div>
+            <header class="exp-head">
+              <div>
+                <div class="exp-company">Nokia</div>
+                <div class="exp-role">Software Engineer · <span class="exp-loc">Bangalore, India</span></div>
+              </div>
+              <div class="exp-dates">Mar 2022 – Apr 2025</div>
+            </header>
+            <p class="exp-blurb">5G NR/RRC simulation & automation; improved reliability, performance, and tooling.</p>
+            <ul class="exp-list">
+              <li>FSM-based RRC workflows aligned to 3GPP; ~<strong>40%</strong> efficiency gain.</li>
+              <li>Post-handover recovery improvements; validated with Pytest & Wireshark.</li>
+              <li>Observability & stability via config updates, Docker–K8s CI/CD, Coverity (~<strong>20%</strong> stability).</li>
+              <li>Optimized message handling to latest 3GPP; ~<strong>5%</strong> processing boost.</li>
+              <li>NLP ChatBot to automate internal queries and speed support.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>C++</span><span>Python</span><span>GTest</span><span>Pytest</span><span>Wireshark</span><span>Docker</span><span>Kubernetes</span><span>Jenkins</span><span>Coverity</span>
+            </div>
+          </article>
+
+          <article class="exp-item card">
+            <div class="exp-dot" aria-hidden="true"></div>
+            <header class="exp-head">
+              <div>
+                <div class="exp-company">BEML — Bharat Earth Movers Limited</div>
+                <div class="exp-role">Software Engineer Intern · <span class="exp-loc">Bangalore, India</span></div>
+              </div>
+              <div class="exp-dates">Jun 2021 – Sept 2021</div>
+            </header>
+            <p class="exp-blurb">Mobile–cloud app for real-time transit safety notifications with scalable APIs and clean UI.</p>
+            <ul class="exp-list">
+              <li>Android app (Java/Kotlin) + Firebase Cloud Messaging for instant alerts.</li>
+              <li>RESTful APIs and async flows for scalable performance.</li>
+              <li>Material Design tuned for responsiveness and UX.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Java</span><span>Kotlin</span><span>Android</span><span>Firebase FCM</span><span>REST APIs</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">EDUCATION</h2>
+      <article class="card">
+        <h3>RNS Institute Of Technology</h3>
+        <p class="lead">Bachelor of Technology in Electronics & Communication</p>
+        <p style="color:#9fb0c3">Jul 2018 – Jun 2022 · GPA: 8.82/10</p>
+      </article>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <h2 class="section-title">📜 CERTIFICATIONS</h2>
+      <div class="card">
+        <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
+          <li><a href="https://drive.google.com/file/d/1Nn514HJhtO8hESGnYy6suGGdAqsrztk9/view?usp=sharing" target="_blank" rel="noopener noreferrer">AWS Cloud Practitioner Essentials</a></li>
+          <li><a href="https://drive.google.com/file/d/1dgr5MsttprP9MBYJJz69sCt53WGBZSrx/view?usp=drive_link" target="_blank" rel="noopener noreferrer">SW Design Patterns</a></li>
+          <li><a href="https://drive.google.com/file/d/1NUet--C12k_vTGXw0uvwy1ZFPhAfn3NG/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Microsoft Azure: Core Cloud Services</a></li>
+          <li><a href="https://drive.google.com/file/d/1uuNR5kTWnsA2klSp50dwJ2ZPpGz31C2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Nokia Bell Labs 5G Foundation</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="y"></span> Swathi Bangalore Satish. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="mailto:swathiblrs@gmail.com">Email</a>
+      <a href="https://github.com/swathiblrs" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/swabs" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
-  </div>
-</section>
-    
-      <!-- PROJECTS -->
-<section id="projects">
-  <h2 class="section-title">PROJECTS</h2>
-  <article class="card">
-    <h3>Performance Analysis of VANET Clustering Routing Protocol</h3>
-    <p class="lead"><em>Jun 2021 – Jun 2022</em></p>
-    <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
-      <li>Simulated a clustering-based VANET routing protocol in NS-2 using C++, integrating LORA_DCBF for efficient forwarding and SHA for secure communication.</li>
-      <li>Utilized Python for data analysis and visualization of performance metrics (PDR, latency, routing overhead).</li>
-    </ul>
-  </article>
+  </footer>
 
-  <article class="card" style="margin-top: 16px;">
-    <h3>Synergetic Use of Bloom Filter in Error Detection & Correction</h3>
-    <p class="lead"><em>Jan 2021 – Mar 2022</em></p>
-    <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
-      <li>Built a Java-based error detection system using Bloom filters in IntelliJ IDEA, optimizing set validation with minimal false positives.</li>
-      <li>Demonstrated synergy between Bloom filters and ECC by tuning hash functions and evaluating space-time trade-offs, improving data reliability.</li>
-    </ul>
-  </article>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <h2 class="section-title">EDUCATION</h2>
-  <article class="card">
-    <h3>RNS Institute Of Technology</h3>
-    <p class="lead">Bachelor of Technology in Electronics & Communication</p>
-    <p style="color:#9fb0c3">Jul 2018 – Jun 2022 · GPA: 8.82/10</p>
-  </article>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <h2 class="section-title">📜 CERTIFICATIONS</h2>
-  <div class="card">
-    <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
-      <li>
-        <a href="https://drive.google.com/file/d/1Nn514HJhtO8hESGnYy6suGGdAqsrztk9/view?usp=sharing" 
-           target="_blank" rel="noopener noreferrer">
-          AWS Cloud Practitioner Essentials
-        </a>
-      </li>
-      <li>
-        <a href="https://drive.google.com/file/d/1dgr5MsttprP9MBYJJz69sCt53WGBZSrx/view?usp=drive_link" 
-           target="_blank" rel="noopener noreferrer">
-          SW Design Patterns
-        </a>
-      </li>
-      <li>
-        <a href="https://drive.google.com/file/d/1NUet--C12k_vTGXw0uvwy1ZFPhAfn3NG/view?usp=drive_link" 
-           target="_blank" rel="noopener noreferrer">
-          Microsoft Azure: Core Cloud Services
-        </a>
-      </li>
-      <li>
-        <a href="https://drive.google.com/file/d/1uuNR5kTWnsA2klSp50dwJ2ZPpGz31C2G/view?usp=drive_link" 
-           target="_blank" rel="noopener noreferrer">
-          Nokia Bell Labs 5G Foundation
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
-
- </main>
- <footer class="site-footer">
-  <p>© <span id="y"></span> Swathi Bangalore Satish. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="mailto:swathiblrs@gmail.com">Email</a>
-    <a href="https://github.com/swathiblrs" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="https://www.linkedin.com/in/swabs" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-  </div>
-</footer>
-
-<script>
-  // Auto update year
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
-
-<style>
-.site-footer {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
-  color: var(--muted);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  margin-top: 40px;
-}
-
-.footer-links {
-  margin-top: 8px;
-}
-
-.footer-links a {
-  margin: 0 10px;
-  color: #4fc3f7;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-</style>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
