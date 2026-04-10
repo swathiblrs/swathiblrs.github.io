@@ -91,8 +91,8 @@
 
     .exp-grid {
       display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 28px;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
       align-items: start;
     }
 
@@ -102,12 +102,14 @@
       letter-spacing: 1px;
       position: sticky;
       top: 100px;
+      white-space: nowrap;
     }
 
     .exp-timeline {
       position: relative;
-      padding-left: 28px;
+      padding-left: 40px;
       border-left: 2px solid #1f2937;
+      margin-left: 10px;
     }
 
     .card {
@@ -129,7 +131,7 @@
       height: 14px;
       border-radius: 50%;
       background: #22c55e;
-      left: -36px;
+      left: -49px;
       top: 28px;
       border: 2px solid #000000;
       box-shadow: 0 0 0 4px #111111;
@@ -212,6 +214,10 @@
 
       .exp-rail {
         position: static;
+      }
+
+      .exp-timeline {
+        margin-left: 0;
       }
     }
 
