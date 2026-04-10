@@ -18,13 +18,12 @@
       --blue:#3b82f6; --github:#2b2f36; --resume:#22d3a9; --green:#0ea5a4;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,Segoe UI,Roboto,Arial}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Inter,system-ui,Segoe UI,Roboto,Arial}
     a{color:inherit;text-decoration:none}
     .container{max-width:1050px;margin:auto;padding:24px}
     header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--stroke)}
     nav{display:flex;justify-content:space-between;align-items:center}
     .brand{font-weight:800;display:flex;gap:.6rem;align-items:center}
-    .dot{width:.75rem;height:.75rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent))}
     .nav a{padding:.6rem .8rem;border-radius:.7rem;color:var(--muted)}
     .nav a:hover{background:rgba(255,255,255,.07);color:var(--text)}
     section{padding:26px 0}
@@ -35,8 +34,15 @@
     #home{padding-top:34px}
     .hero{display:grid;grid-template-columns:0.9fr 1.1fr;align-items:center;gap:30px;padding:10px 0 28px}
     .hero-media{border-radius:26px;padding:20px;display:flex;align-items:center;justify-content:flex-start;min-height:280px;background:var(--card);border:1px solid var(--stroke)}
-    .hero-media img{width:100%;max-width:380px;border-radius:16px;display:block;margin-left:0;animation:float 3s ease-in-out infinite}
-    @keyframes float{0%{transform:scaleX(-1) translateY(0)}50%{transform:scaleX(-1) translateY(-8px)}100%{transform:scaleX(-1) translateY(0)}}
+    .hero-media img{
+      width:100%;
+      max-width:380px;
+      border-radius:16px;
+      display:block;
+      margin-left:0;
+      transform:scaleX(-1);
+      will-change:transform;
+    }
     .hero-title{font-size:clamp(28px,4vw,45px);line-height:1.1;margin:0 0 10px;font-weight:800}
     .hero-small{color:var(--muted);font-size:22px;font-weight:500;margin-top:10px}
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
@@ -47,8 +53,8 @@
     .btn.cv{background:var(--resume);color:white}
 
     .background-card{margin-top:8px}
-    .status{display:flex;align-items:center;gap:10px;margin-top:8px}
-    .status-dot{width:12px;height:12px;border-radius:999px;background:#22d3a9;box-shadow:0 0 0 6px rgba(34,211,169,.12)}
+    .background-card p{margin:0 0 14px;color:#d6e2f5;line-height:1.9}
+    .background-card p:last-child{margin-bottom:0}
 
     .skills-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:10px}
     .skills-col h3{margin:0 0 8px;font-size:14px;font-weight:700;color:#9fb0c3;letter-spacing:.06em}
@@ -71,6 +77,7 @@
     .exp-blurb{color:var(--muted);margin:6px 0 10px;line-height:1.7}
     .exp-list{margin:0;padding-left:18px;color:#d6e2f5;line-height:1.65}
     .exp-list li{margin:.3rem 0}
+    .exp-list li::marker{color:#22d3a9;}
     .exp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
     .exp-tags span{font-size:12px;color:#c7d4e5;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:999px}
 
@@ -130,18 +137,13 @@
       <h2 class="exp-rail" style="margin-top: 90px;">BACKGROUND</h2>
       <div class="card background-card">
         <p>
-          I’m a Master’s student in Computer Science at the University of Tennessee, Knoxville, focused on building scalable and reliable systems. My interests include distributed systems, data analytics, cloud computing, AI and machine learning, and networking, with an emphasis on real world impact.
-
-Previously at Nokia, I developed a proprietary 5G simulator, optimized FSM workflows to boost efficiency by 40%, and co-developed an NLP-powered ChatBot to automate internal support and enhance productivity.
-
-Excited about solving complex engineering problems, collaborating across teams, and continuously learning. Currently preparing to transition into graduate research and looking forward to opportunities in software engineering, automation, and applied AI.
-
-Skills:
-	•	C++ / Python Development
-	•	Backend & Network Simulation
-	•	Automation & CI/CD Pipelines
-	•	NLP & Intelligent Systems
-	•	Debugging & Observability Tools
+          I’m a Master’s student in Computer Science at the University of Tennessee, Knoxville, with experience in software engineering, network simulation, automation, and backend systems. My work has focused on building reliable and scalable solutions using C++, Python, Java, and cloud-native tools.
+        </p>
+        <p>
+          At Nokia, I worked on a proprietary 5G simulator and contributed to FSM-based NR-RRC workflows aligned with 3GPP standards, improving efficiency and system stability. I also worked on post-handover recovery validation, observability improvements, CI/CD integration, and an NLP-powered internal ChatBot to automate routine support queries. At UTK, I support accessible document-processing workflows and maintain confidential academic records.
+        </p>
+        <p>
+          My interests include distributed systems, software engineering, cloud computing, networking, data engineering, and applied AI. I enjoy solving complex engineering problems, improving system reliability, and building tools that create practical impact.
         </p>
       </div>
 
@@ -150,25 +152,25 @@ Skills:
         <div class="skills-col">
           <h3>LANGUAGES</h3>
           <ul>
-            <li>C / C++</li><li>Python</li><li>Java</li><li>Kotlin</li><li>SQL</li><li>HTML</li><li>CSS</li>
+            <li>C / C++</li><li>Python</li><li>Java</li><li>Kotlin</li>
           </ul>
         </div>
         <div class="skills-col">
-          <h3>LIBRARIES / FRAMEWORKS</h3>
+          <h3>FRAMEWORKS</h3>
           <ul>
-            <li>Google Test (GTest)</li><li>Pytest</li><li>FastAPI</li><li>Android</li><li>REST APIs</li><li>NS2</li><li>Pandas</li>
+            <li>Pytest</li><li>Google Test (GTest)</li><li>Firebase</li><li>NS2</li><li>RESTful APIs</li>
           </ul>
         </div>
         <div class="skills-col">
-          <h3>TOOLS</h3>
+          <h3>DEVOPS / TOOLS</h3>
           <ul>
-            <li>Jenkins</li><li>Docker</li><li>Kubernetes</li><li>Git</li><li>Wireshark</li><li>Valgrind</li><li>Coverity</li><li>Jira</li><li>AWS</li>
+            <li>Jenkins</li><li>Kubernetes</li><li>Docker</li><li>Git</li><li>Jira</li><li>Wireshark</li><li>Valgrind</li><li>Coverity</li><li>AWS</li>
           </ul>
         </div>
         <div class="skills-col">
-          <h3>DATABASES</h3>
+          <h3>DATABASES / DATA</h3>
           <ul>
-            <li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li>
+            <li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>NLP</li><li>5G NR</li><li>RRC Protocols</li><li>3GPP</li>
           </ul>
         </div>
       </div>
@@ -181,8 +183,8 @@ Skills:
         <h3>Performance Analysis of VANET Clustering Routing Protocol</h3>
         <p class="lead"><em>Jun 2021 – Jun 2022</em></p>
         <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
-          <li>Simulated a clustering-based VANET routing protocol in NS-2 using C++, integrating LORA_DCBF for efficient forwarding and SHA for secure communication.</li>
-          <li>Used Python to analyze & visualize PDR, latency, and routing overhead.</li>
+          <li>Simulated and analyzed a clustering-based VANET routing protocol using NS-2, evaluating packet delivery ratio, latency, and routing overhead, achieving up to ~20% improvement in PDR compared to baseline routing approaches.</li>
+          <li>Conducted comparative performance analysis of cluster-based routing mechanisms, demonstrating approximately 15–25% reduction in end-to-end delay and routing overhead through optimized cluster-head selection.</li>
         </ul>
       </article>
 
@@ -190,8 +192,8 @@ Skills:
         <h3>Synergetic Use of Bloom Filter in Error Detection & Correction</h3>
         <p class="lead"><em>Jan 2021 – Mar 2022</em></p>
         <ul style="margin:.4rem 0 0 1.1rem;color:#c7d4e5">
-          <li>Built a Java-based error detection system using Bloom filters, optimizing set validation with minimal false positives.</li>
-          <li>Showed Bloom-filter + ECC synergy by tuning hash functions and measuring space-time trade-offs to improve reliability.</li>
+          <li>Built a Java-based error detection system using Bloom filters in IntelliJ IDEA, optimizing set validation with minimal false positives.</li>
+          <li>Demonstrated the synergy between Bloom filters and error correction codes (ECC) by tuning hash functions and evaluating space-time trade-offs, improving data reliability in noisy transmission environments.</li>
         </ul>
       </article>
     </section>
@@ -200,25 +202,23 @@ Skills:
       <div class="exp-grid">
         <h2 class="exp-rail">EXPERIENCE</h2>
         <div class="exp-timeline">
+
           <article class="exp-item card">
             <div class="exp-dot" aria-hidden="true"></div>
             <header class="exp-head">
               <div>
-                <div class="exp-company">Nokia</div>
-                <div class="exp-role">Software Engineer · <span class="exp-loc">Bangalore, India</span></div>
+                <div class="exp-company">University of Tennessee</div>
+                <div class="exp-role">Software Engineer Assistant · <span class="exp-loc">Knoxville, USA</span></div>
               </div>
-              <div class="exp-dates">Mar 2022 – Apr 2025</div>
+              <div class="exp-dates">Feb 2026 – Present</div>
             </header>
-            <p class="exp-blurb">5G NR/RRC simulation & automation; improved reliability, performance, and tooling.</p>
+            <p class="exp-blurb">Supporting accessible academic workflows and secure record handling.</p>
             <ul class="exp-list">
-              <li>FSM-based RRC workflows aligned to 3GPP; ~<strong>40%</strong> efficiency gain.</li>
-              <li>Post-handover recovery improvements; validated with Pytest & Wireshark.</li>
-              <li>Observability & stability via config updates, Docker–K8s CI/CD, Coverity (~<strong>20%</strong> stability).</li>
-              <li>Optimized message handling to latest 3GPP; ~<strong>5%</strong> processing boost.</li>
-              <li>NLP ChatBot to automate internal queries and speed support.</li>
+              <li>Engineered accessible document-processing workflows by converting exam materials into Kurzweil-ready formats.</li>
+              <li>Maintained AIM records with strict confidentiality and process accuracy.</li>
             </ul>
             <div class="exp-tags">
-              <span>C++</span><span>Python</span><span>GTest</span><span>Pytest</span><span>Wireshark</span><span>Docker</span><span>Kubernetes</span><span>Jenkins</span><span>Coverity</span>
+              <span>Accessibility</span><span>Document Processing</span><span>Confidential Records</span><span>Workflow Support</span>
             </div>
           </article>
 
@@ -226,21 +226,62 @@ Skills:
             <div class="exp-dot" aria-hidden="true"></div>
             <header class="exp-head">
               <div>
-                <div class="exp-company">BEML — Bharat Earth Movers Limited</div>
+                <div class="exp-company">Nokia</div>
+                <div class="exp-role">Software Engineer · <span class="exp-loc">Bengaluru, India</span></div>
+              </div>
+              <div class="exp-dates">Sep 2022 – Feb 2025</div>
+            </header>
+            <p class="exp-blurb">5G NR/RRC simulation, automation, observability, and internal tooling.</p>
+            <ul class="exp-list">
+              <li>Built and enhanced a 5G simulator with FSM-based 3GPP NR-RRC workflows for Jio’s 5G India, improving efficiency by ~<strong>40%</strong>.</li>
+              <li>Strengthened post-handover recovery and re-establishment by extending FSM logic and validating with Pytest and Wireshark signaling analysis.</li>
+              <li>Improved stability and observability through configuration updates, Docker–Kubernetes CI/CD integration, and Coverity-driven core dump fixes, contributing to ~<strong>20%</strong> stability gain.</li>
+              <li>Co-developed an internal NLP ChatBot to automate routine queries and improve cross-team user experience.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>C++</span><span>Python</span><span>Pytest</span><span>Wireshark</span><span>Docker</span><span>Kubernetes</span><span>Coverity</span><span>5G NR/RRC</span>
+            </div>
+          </article>
+
+          <article class="exp-item card">
+            <div class="exp-dot" aria-hidden="true"></div>
+            <header class="exp-head">
+              <div>
+                <div class="exp-company">Nokia</div>
+                <div class="exp-role">Software Engineer Intern · <span class="exp-loc">Bengaluru, India</span></div>
+              </div>
+              <div class="exp-dates">Mar 2022 – Aug 2022</div>
+            </header>
+            <p class="exp-blurb">Supported 5G simulator development and workflow analysis.</p>
+            <ul class="exp-list">
+              <li>Analyzed and processed 5G simulator workflows supporting NR-RRC logic and performance evaluation.</li>
+              <li>Contributed to approximately <strong>30%</strong> efficiency improvement through workflow support and optimization.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>5G Simulation</span><span>NR-RRC</span><span>Performance Analysis</span><span>Workflow Optimization</span>
+            </div>
+          </article>
+
+          <article class="exp-item card">
+            <div class="exp-dot" aria-hidden="true"></div>
+            <header class="exp-head">
+              <div>
+                <div class="exp-company">Bharat Earth Movers Limited (BEML)</div>
                 <div class="exp-role">Software Engineer Intern · <span class="exp-loc">Bangalore, India</span></div>
               </div>
-              <div class="exp-dates">Jun 2021 – Sept 2021</div>
+              <div class="exp-dates">Jun 2021 – Sep 2021</div>
             </header>
-            <p class="exp-blurb">Mobile–cloud app for real-time transit safety notifications with scalable APIs and clean UI.</p>
+            <p class="exp-blurb">Mobile-cloud development for real-time transit safety notifications.</p>
             <ul class="exp-list">
-              <li>Android app (Java/Kotlin) + Firebase Cloud Messaging for instant alerts.</li>
-              <li>RESTful APIs and async flows for scalable performance.</li>
-              <li>Material Design tuned for responsiveness and UX.</li>
+              <li>Designed and developed a real-time transit safety notification mobile application using Android Studio with Java and Kotlin.</li>
+              <li>Integrated Firebase Cloud Messaging for instant alerts and scalable, event-driven communication.</li>
+              <li>Implemented RESTful APIs and asynchronous client-server interactions to improve responsiveness and reliability.</li>
             </ul>
             <div class="exp-tags">
               <span>Java</span><span>Kotlin</span><span>Android</span><span>Firebase FCM</span><span>REST APIs</span>
             </div>
           </article>
+
         </div>
       </div>
     </section>
@@ -253,23 +294,19 @@ Skills:
           <img src="utk-logo.png" alt="University of Tennessee, Knoxville logo" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
           <h3 style="margin:0;">University of Tennessee, Knoxville</h3>
         </div>
-        <p style="margin:.2rem 0; color:#c7d4e5;">M.S. in Computer Science (Spring 2026 – Present)</p>
+        <p style="margin:.2rem 0; color:#c7d4e5;">Master of Science in Computer Science · Dec 2027</p>
         <p style="margin:.2rem 0; color:#c7d4e5;">
-          <strong>Courses:</strong> Algorithms, Software Systems, Data Analysis, and Computing Foundations
+          <strong>Course Work:</strong> Algorithms, Avd. SWE, Data Engineering
         </p>
       </article>
 
       <article class="card">
         <div style="display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; padding:10px 0 20px;">
           <img src="vtu-logo.jpeg" alt="VTU logo" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
-          <h3 style="margin:0;">Visvesvaraya Technological University</h3>
+          <h3 style="margin:0;">Visvesvaraya Technological University, Belgaum, India</h3>
         </div>
-        <p style="margin:.2rem 0; color:#c7d4e5;">B.E. in Electronics and Communication Engineering (2018 – 2022)</p>
-        <p style="margin:.2rem 0; color:#c7d4e5;"><strong>GPA:</strong> 8.82/10</p>
-        <p style="margin:.2rem 0; color:#c7d4e5;">
-          <strong>Courses:</strong> Data Structures, Operating Systems, Database Management Systems,
-          Artificial Intelligence, Machine Learning, Object-Oriented Design & Development
-        </p>
+        <p style="margin:.2rem 0; color:#c7d4e5;">B.E. in Electronics and Communication · Aug 2022</p>
+        <p style="margin:.2rem 0; color:#c7d4e5;"><strong>GPA:</strong> 3.53/4</p>
       </article>
     </section>
 
@@ -289,7 +326,7 @@ Skills:
   <footer class="site-footer">
     <p>© <span id="y"></span> Swathi Bangalore Satish. All rights reserved.</p>
     <div class="footer-links">
-      <a href="mailto:swathiblrs@gmail.com">Email</a>
+      <a href="mailto:sbangal1@vols.utk.edu">Email</a>
       <a href="https://github.com/swathiblrs" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/swabs" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
@@ -297,6 +334,25 @@ Skills:
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    const heroImage = document.querySelector('.hero-media img');
+
+    if (heroImage) {
+      let start = null;
+      const amplitude = 8;
+      const speed = 0.002;
+
+      function animateImage(timestamp) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+        const y = Math.sin(elapsed * speed) * amplitude;
+
+        heroImage.style.transform = `scaleX(-1) translateY(${y}px)`;
+        requestAnimationFrame(animateImage);
+      }
+
+      requestAnimationFrame(animateImage);
+    }
   </script>
 </body>
 </html>
