@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience | Swathi Bangalore Satish</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0b0b0b;
+      border-bottom: 1px solid #222222;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d1d5db;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffffff;
+    }
+
+    .hero {
+      padding: 70px 20px 40px;
+      text-align: center;
+      background: linear-gradient(to bottom, #111111, #000000);
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: #cfcfcf;
+    }
+
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 70px;
+    }
+
+    .exp-section {
+      width: 100%;
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .exp-rail {
+      color: #ffffff;
+      font-size: 28px;
+      letter-spacing: 1px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .exp-timeline {
+      position: relative;
+      padding-left: 28px;
+      border-left: 2px solid #1f2937;
+    }
+
+    .card {
+      background: #111111;
+      border: 1px solid #222222;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.04);
+    }
+
+    .exp-item {
+      position: relative;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .exp-dot {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #22c55e;
+      left: -36px;
+      top: 28px;
+      border: 2px solid #000000;
+      box-shadow: 0 0 0 4px #111111;
+    }
+
+    .exp-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .exp-company {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .exp-role {
+      font-size: 16px;
+      color: #d1d5db;
+    }
+
+    .exp-loc {
+      color: #9ca3af;
+    }
+
+    .exp-dates {
+      font-size: 14px;
+      color: #9ca3af;
+      white-space: nowrap;
+    }
+
+    .exp-blurb {
+      color: #cfcfcf;
+      margin-bottom: 14px;
+    }
+
+    .exp-list {
+      padding-left: 22px;
+      margin-bottom: 16px;
+    }
+
+    .exp-list li {
+      margin-bottom: 10px;
+      color: #d1d5db;
+    }
+
+    .exp-list li::marker {
+      color: #22c55e;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .exp-tags span {
+      background: #0b0b0b;
+      color: #d1d5db;
+      border: 1px solid #222222;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .exp-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-rail {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 14px 18px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .exp-head {
+        flex-direction: column;
+      }
+
+      .exp-dates {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Swathi Bangalore Satish</div>
+    <nav class="nav-links">
+      <a href="index.html#home">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html" class="active">Experience</a>
+      <a href="index.html#education">Education</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#certificates">Certificates</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Experience</h1>
+    <p>
+      My experience across software engineering, 5G simulation, automation,
+      mobile development, and academic workflow support.
+    </p>
+  </section>
+
+  <main class="page-wrapper">
+    <section id="experience" class="exp-section">
+      <div class="exp-grid">
+        <h2 class="exp-rail">EXPERIENCE</h2>
+        <div class="exp-timeline">
+
+          <article class="exp-item card">
+            <div class="exp-dot" aria-hidden="true"></div>
+            <header class="exp-head">
+              <div>
+                <div class="exp-company">University of Tennessee</div>
+                <div class="exp-role">Software Engineer Assistant · <span class="exp-loc">Knoxville, USA</span></div>
+              </div>
+              <div class="exp-dates">Feb 2026 – Present</div>
+            </header>
+            <p class="exp-blurb">Supporting accessible academic workflows and secure record handling.</p>
+            <ul class="exp-list">
+              <li>Engineered accessible document-processing workflows by converting exam materials into Kurzweil-ready formats.</li>
+              <li>Maintained AIM records with strict confidentiality and process accuracy.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Accessibility</span>
+              <span>Document Processing</span>
+              <span>Confidential Records</span>
+              <span>Workflow Support</span>
+            </div>
+          </article>
+
+          <article class="exp-item card">
+            <div class="exp-dot" aria-hidden="true"></div>
+            <header class="exp-head">
+              <div>
+                <div class="exp-company">Nokia</div>
+                <div class="exp-role">Software Engineer · <span class="exp-loc">Bengaluru, India</span></div>
+              </div>
+              <div class="exp-dates">Sep 2022 – Feb 2025</div>
+            </header>
+            <p class="exp-blurb">5G NR/RRC simulation, automation, observability, and internal tooling.</p>
+            <ul class="exp-list">
+              <li>Built and enhanced a 5G simulator with FSM-based 3GPP NR-RRC workflows for Jio’s 5G India, improving efficiency by ~<strong>40%</strong>.</li>
+              <li>Strengthened post-handover recovery and re-establishment by extending FSM logic and validating with Pytest and Wireshark signaling analysis.</li>
+              <li>Improved stability and observability through configuration updates, Docker–Kubernetes CI/CD integration, and Coverity-driven core dump fixes, contributing to ~<strong>20%</strong> stability gain.</li>
+              <li>Co-developed an internal NLP ChatBot to automate routine queries and improve cross-team user experience.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>C++</span>
+              <span>Python</span>
+              <span>Pytest</span>
+              <span>Wireshark</span>
+              <span>Docker</span>
+              <span>Kubernetes</span>
+              <span>Coverity</span>
+              <span>5G NR/RRC</span>
+            </div>
+          </article>
+
+          <article class="exp-item card">
+            <div class="exp-dot" aria-hidden="true"></div>
+            <header class="exp-head">
+              <div>
+                <div class="exp-company">Nokia</div>
+                <div class="exp-role">Software Engineer Intern · <span class="exp-loc">Bengaluru, India</span></div>
+              </div>
+              <div class="exp-dates">Mar 2022 – Aug 2022</div>
+            </header>
+            <p class="exp-blurb">Supported 5G simulator development and workflow analysis.</p>
+            <ul class="exp-list">
+              <li>Analyzed and processed 5G simulator workflows supporting NR-RRC logic and performance evaluation.</li>
+              <li>Contributed to approximately <strong>30%</strong> efficiency improvement through workflow support and optimization.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>5G Simulation</span>
+              <span>NR-RRC</span>
+              <span>Performance Analysis</span>
+              <span>Workflow Optimization</span>
+            </div>
+          </article>
+
+          <article class="exp-item card">
+            <div class="exp-dot" aria-hidden="true"></div>
+            <header class="exp-head">
+              <div>
+                <div class="exp-company">Bharat Earth Movers Limited (BEML)</div>
+                <div class="exp-role">Software Engineer Intern · <span class="exp-loc">Bangalore, India</span></div>
+              </div>
+              <div class="exp-dates">Jun 2021 – Sep 2021</div>
+            </header>
+            <p class="exp-blurb">Mobile-cloud development for real-time transit safety notifications.</p>
+            <ul class="exp-list">
+              <li>Designed and developed a real-time transit safety notification mobile application using Android Studio with Java and Kotlin.</li>
+              <li>Integrated Firebase Cloud Messaging for instant alerts and scalable, event-driven communication.</li>
+              <li>Implemented RESTful APIs and asynchronous client-server interactions to improve responsiveness and reliability.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Java</span>
+              <span>Kotlin</span>
+              <span>Android</span>
+              <span>Firebase FCM</span>
+              <span>REST APIs</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2026 Swathi Bangalore Satish
+  </footer>
+
+</body>
+</html>
