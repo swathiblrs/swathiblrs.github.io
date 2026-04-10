@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Swathi Bangalore Satish · Portfolio</title>
 
-  <!-- Favicon (emoji) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍💻</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +15,7 @@
     :root{
       --bg:#0b1020; --card:#11162a; --muted:#9fb0c3; --text:#eef3fb;
       --brand:#7c5cff; --accent:#22d3a9; --stroke:rgba(255,255,255,.08);
-      --blue:#3b82f6; --github:#2b2f36; --resume:#22d3a9;
+      --blue:#3b82f6; --github:#2b2f36; --resume:#22d3a9; --green:#0ea5a4;
     }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,Segoe UI,Roboto,Arial}
@@ -29,24 +28,10 @@
     .nav a{padding:.6rem .8rem;border-radius:.7rem;color:var(--muted)}
     .nav a:hover{background:rgba(255,255,255,.07);color:var(--text)}
     section{padding:26px 0}
-    h2.section-title{font-size:16px;font-weight:800;letter-spacing:.18em;color:#4ba3ff;margin:0 0 14px}
     .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;padding:18px;transition:.2s}
     .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    .grid{display:grid;gap:16px}
-    .grid.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .lead{color:var(--muted);font-size:18px}
-    .stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
-    .pill{padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--muted);font-size:12px}
-    footer{border-top:1px solid var(--stroke);color:var(--muted);padding:24px 0;margin-top:24px;text-align:center}
 
-    display: grid;
-grid-template-columns: 0.9fr 1.1fr;
-align-items: center;
-gap: 30px;
-padding: 10px 0 28px;
-    
-    /* HOME (Hero + Background + Skills in one section) */
     #home{padding-top:34px}
     .hero{display:grid;grid-template-columns:0.9fr 1.1fr;align-items:center;gap:30px;padding:10px 0 28px}
     .hero-media{border-radius:26px;padding:20px;display:flex;align-items:center;justify-content:flex-start;min-height:280px;background:var(--card);border:1px solid var(--stroke)}
@@ -61,21 +46,18 @@ padding: 10px 0 28px;
     .btn.li{background:var(--green)}
     .btn.cv{background:var(--resume);color:white}
 
-    /* Background blurb */
     .background-card{margin-top:8px}
     .status{display:flex;align-items:center;gap:10px;margin-top:8px}
     .status-dot{width:12px;height:12px;border-radius:999px;background:#22d3a9;box-shadow:0 0 0 6px rgba(34,211,169,.12)}
 
-    /* Skills columns (inside Home) */
     .skills-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:10px}
     .skills-col h3{margin:0 0 8px;font-size:14px;font-weight:700;color:#9fb0c3;letter-spacing:.06em}
     .skills-col ul{list-style:none;margin:0;padding:0}
     .skills-col li{color:#eef3fb;line-height:1.9;font-size:13px}
 
-    /* Experience (unchanged, still its own section) */
     .exp-section{padding:64px 0;border-top:1px solid rgba(255,255,255,.06)}
     .exp-grid{display:grid;grid-template-columns:220px 1fr;gap:28px}
-    .exp-rail{color:#22d3a9;letter-spacing:.18em;font-weight:800;font-size:14px;margin:6px 0 0}
+    .exp-rail{color:#22d3a9;letter-spacing:.18em;font-weight:800;font-size:14px;margin:6px 0 14px}
     .exp-timeline{position:relative}
     .exp-timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,rgba(255,255,255,.10),rgba(255,255,255,.03))}
     .exp-item{position:relative;margin-left:28px;margin-bottom:22px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;transition:.25s;box-shadow:0 8px 24px rgba(0,0,0,.22)}
@@ -92,13 +74,11 @@ padding: 10px 0 28px;
     .exp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
     .exp-tags span{font-size:12px;color:#c7d4e5;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:999px}
 
-    /* Footer */
     .site-footer{text-align:center;padding:20px 0;font-size:14px;color:var(--muted);border-top:1px solid rgba(255,255,255,.05);margin-top:40px}
     .footer-links{margin-top:8px}
     .footer-links a{margin:0 10px;color:#4fc3f7;font-weight:500}
     .footer-links a:hover{text-decoration:underline}
 
-    /* Responsive */
     @media (max-width:1100px){.skills-columns{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (max-width:900px){
       .hero{grid-template-columns:1fr}
@@ -130,12 +110,9 @@ padding: 10px 0 28px;
   </header>
 
   <main class="container">
-    <!-- HOME = Hero + Background + Skills -->
     <section id="home">
-      <!-- Hero -->
       <div class="hero">
         <div class="hero-media">
-          <!-- place hero.png in repo root -->
           <img src="profile.png" alt="Illustration / photo of Swathi" onerror="this.style.display='none'">
         </div>
         <div>
@@ -150,9 +127,8 @@ padding: 10px 0 28px;
         </div>
       </div>
 
-      <!-- Background -->
       <h2 class="exp-rail" style="margin-top: 90px;">BACKGROUND</h2>
-      <div class=" card background-card">
+      <div class="card background-card">
         <p>
           A software engineer with strong skills in C++, Python, full-stack development, and automation. Specializes in designing efficient systems, building scalable applications, and solving complex technical problems. Experience includes writing high-performance code, developing reliable backend components, and working with modern tools, frameworks, and best practices. Has a solid foundation in data structures, algorithms, networking fundamentals, and cloud-based development workflows.
         </p>
@@ -162,7 +138,6 @@ padding: 10px 0 28px;
         </div>
       </div>
 
-      <!-- Skills -->
       <h2 class="exp-rail" style="margin-top:22px;">SKILLS</h2>
       <div class="skills-columns">
         <div class="skills-col">
@@ -192,7 +167,6 @@ padding: 10px 0 28px;
       </div>
     </section>
 
-    <!-- PROJECTS (separate section; “Projects” in navbar goes here) -->
     <section id="projects">
       <h2 class="exp-rail" style="margin-top:22px;">PROJECTS</h2>
 
@@ -215,7 +189,6 @@ padding: 10px 0 28px;
       </article>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience" class="exp-section">
       <div class="exp-grid">
         <h2 class="exp-rail">EXPERIENCE</h2>
@@ -265,25 +238,34 @@ padding: 10px 0 28px;
       </div>
     </section>
 
-    <!-- EDUCATION -->
-   <section id="education">
+    <section id="education">
       <h2 class="exp-rail">EDUCATION</h2>
-  <article class="card p-6 rounded-xl bg-[#1a1a1a] shadow-md">
-  <!-- Grid Row: Logo + University Name -->
-  <div style="display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 16px; padding: 10px 0 20px;">
-  <img src="vtu-logo.jpeg" style="width: 40px; height: 40px; border-radius: 50%;">
-  <h3 class="text-xl font-bold">Visvesvaraya Technological University</h3>
-  </div>
-  <p class="text-sm text-gray-300"> B.E. in Electronics and Communication Engineering (2018 – 2022)</p>
-  <p class="text-sm"><span class="font-semibold">GPA:</span> 8.82/10</p>
-  <p class="text-sm">
-    <span class="font-semibold">Courses:</span> Data Structures, Operating Systems, Database Management Systems, 
-    Artificial Intelligence, Machine Learning, Object-Oriented Design & Development
-  </p>
-</article>
-</section>
-    
-    <!-- CERTIFICATIONS -->
+
+      <article class="card" style="margin-bottom:16px;">
+        <div style="display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; padding:10px 0 20px;">
+          <img src="utk-logo.png" alt="University of Tennessee, Knoxville logo" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+          <h3 style="margin:0;">University of Tennessee, Knoxville</h3>
+        </div>
+        <p style="margin:.2rem 0; color:#c7d4e5;">M.S. in Computer Science (Spring 2026 – Present)</p>
+        <p style="margin:.2rem 0; color:#c7d4e5;">
+          <strong>Focus:</strong> Algorithms, Software Systems, Data Analysis, and Computing Foundations
+        </p>
+      </article>
+
+      <article class="card">
+        <div style="display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; padding:10px 0 20px;">
+          <img src="vtu-logo.jpeg" alt="VTU logo" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+          <h3 style="margin:0;">Visvesvaraya Technological University</h3>
+        </div>
+        <p style="margin:.2rem 0; color:#c7d4e5;">B.E. in Electronics and Communication Engineering (2018 – 2022)</p>
+        <p style="margin:.2rem 0; color:#c7d4e5;"><strong>GPA:</strong> 8.82/10</p>
+        <p style="margin:.2rem 0; color:#c7d4e5;">
+          <strong>Courses:</strong> Data Structures, Operating Systems, Database Management Systems,
+          Artificial Intelligence, Machine Learning, Object-Oriented Design & Development
+        </p>
+      </article>
+    </section>
+
     <section id="certifications">
       <h2 class="exp-rail">CERTIFICATIONS</h2>
       <div class="card">
