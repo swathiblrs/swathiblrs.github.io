@@ -13,27 +13,108 @@
 
   <style>
     :root{
-      --bg:#0b1020; --card:#11162a; --muted:#9fb0c3; --text:#eef3fb;
-      --brand:#7c5cff; --accent:#22d3a9; --stroke:rgba(255,255,255,.08);
-      --blue:#3b82f6; --github:#2b2f36; --resume:#22d3a9; --green:#0ea5a4;
+      --bg:#0b1020;
+      --card:#11162a;
+      --muted:#9fb0c3;
+      --text:#eef3fb;
+      --brand:#7c5cff;
+      --accent:#22d3a9;
+      --stroke:rgba(255,255,255,.08);
+      --github:#2b2f36;
+      --resume:#22d3a9;
+      --green:#0ea5a4;
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Inter,system-ui,Segoe UI,Roboto,Arial}
+
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font:16px/1.7 Inter,system-ui,Segoe UI,Roboto,Arial;
+    }
+
     a{color:inherit;text-decoration:none}
-    .container{max-width:1050px;margin:auto;padding:24px}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--stroke)}
-    nav{display:flex;justify-content:space-between;align-items:center}
-    .brand{font-weight:800;display:flex;gap:.6rem;align-items:center}
-    .nav a{padding:.6rem .8rem;border-radius:.7rem;color:var(--muted)}
-    .nav a:hover{background:rgba(255,255,255,.07);color:var(--text)}
+
+    .container{
+      max-width:1050px;
+      margin:auto;
+      padding:24px;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(11,16,32,.75);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--stroke);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .brand{
+      font-weight:800;
+      display:flex;
+      gap:.6rem;
+      align-items:center;
+    }
+
+    .nav a{
+      padding:.6rem .8rem;
+      border-radius:.7rem;
+      color:var(--muted);
+    }
+
+    .nav a:hover{
+      background:rgba(255,255,255,.07);
+      color:var(--text);
+    }
+
     section{padding:26px 0}
-    .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;padding:18px;transition:.2s}
-    .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    .lead{color:var(--muted);font-size:18px}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:18px;
+      padding:18px;
+      transition:.2s;
+    }
+
+    .card:hover{
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    .lead{
+      color:var(--muted);
+      font-size:18px;
+    }
 
     #home{padding-top:34px}
-    .hero{display:grid;grid-template-columns:0.9fr 1.1fr;align-items:center;gap:30px;padding:10px 0 28px}
-    .hero-media{border-radius:26px;padding:20px;display:flex;align-items:center;justify-content:flex-start;min-height:280px;background:var(--card);border:1px solid var(--stroke)}
+
+    .hero{
+      display:grid;
+      grid-template-columns:0.9fr 1.1fr;
+      align-items:center;
+      gap:30px;
+      padding:10px 0 28px;
+    }
+
+    .hero-media{
+      border-radius:26px;
+      padding:20px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      min-height:280px;
+      background:var(--card);
+      border:1px solid var(--stroke);
+    }
+
     .hero-media img{
       width:100%;
       max-width:380px;
@@ -43,50 +124,250 @@
       transform:scaleX(-1);
       will-change:transform;
     }
-    .hero-title{font-size:clamp(28px,4vw,45px);line-height:1.1;margin:0 0 10px;font-weight:800}
-    .hero-small{color:var(--muted);font-size:22px;font-weight:500;margin-top:10px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;font-weight:700;border:1px solid var(--stroke);transition:.2s}
-    .btn:hover{transform:translateY(-1px);opacity:.95}
+
+    .hero-title{
+      font-size:clamp(28px,4vw,45px);
+      line-height:1.1;
+      margin:0 0 10px;
+      font-weight:800;
+    }
+
+    .hero-small{
+      color:var(--muted);
+      font-size:22px;
+      font-weight:500;
+      margin-top:10px;
+    }
+
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:700;
+      border:1px solid var(--stroke);
+      transition:.2s;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      opacity:.95;
+    }
+
     .btn.gh{background:var(--github)}
     .btn.li{background:var(--green)}
     .btn.cv{background:var(--resume);color:white}
 
-    .background-card{margin-top:8px}
-    .background-card p{margin:0 0 14px;color:#d6e2f5;line-height:1.9}
-    .background-card p:last-child{margin-bottom:0}
+    .skills-columns{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:28px;
+      margin-top:10px;
+    }
 
-    .skills-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:10px}
-    .skills-col h3{margin:0 0 8px;font-size:14px;font-weight:700;color:#9fb0c3;letter-spacing:.06em}
-    .skills-col ul{list-style:none;margin:0;padding:0}
-    .skills-col li{color:#eef3fb;line-height:1.9;font-size:13px}
+    .skills-col h3{
+      margin:0 0 8px;
+      font-size:14px;
+      font-weight:700;
+      color:#9fb0c3;
+      letter-spacing:.06em;
+    }
 
-    .exp-section{padding:64px 0;border-top:1px solid rgba(255,255,255,.06)}
-    .exp-grid{display:grid;grid-template-columns:220px 1fr;gap:28px}
-    .exp-rail{color:#22d3a9;letter-spacing:.18em;font-weight:800;font-size:14px;margin:6px 0 14px}
-    .exp-timeline{position:relative}
-    .exp-timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,rgba(255,255,255,.10),rgba(255,255,255,.03))}
-    .exp-item{position:relative;margin-left:28px;margin-bottom:22px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;transition:.25s;box-shadow:0 8px 24px rgba(0,0,0,.22)}
-    .exp-item:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,0,0,.28)}
-    .exp-dot{position:absolute;left:-22px;top:22px;width:12px;height:12px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent));box-shadow:0 0 0 4px rgba(124,92,255,.15)}
-    .exp-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-    .exp-company{font-size:20px;font-weight:700;color:var(--text)}
-    .exp-role{font-size:15px;color:var(--muted)}
+    .skills-col ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
+    .skills-col li{
+      color:#eef3fb;
+      line-height:1.9;
+      font-size:13px;
+    }
+
+    .exp-section{
+      padding:64px 0;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+
+    .exp-grid{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:28px;
+    }
+
+    .exp-rail{
+      color:#22d3a9;
+      letter-spacing:.18em;
+      font-weight:800;
+      font-size:14px;
+      margin:6px 0 14px;
+    }
+
+    .exp-timeline{
+      position:relative;
+    }
+
+    .exp-timeline::before{
+      content:"";
+      position:absolute;
+      left:10px;
+      top:0;
+      bottom:0;
+      width:2px;
+      background:linear-gradient(to bottom, rgba(34,211,169,.35), rgba(34,211,169,.12));
+    }
+
+    .exp-item{
+      position:relative;
+      margin-left:28px;
+      margin-bottom:22px;
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      padding:18px;
+      transition:.25s;
+      box-shadow:0 8px 24px rgba(0,0,0,.22);
+    }
+
+    .exp-item:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 36px rgba(0,0,0,.28);
+    }
+
+    .exp-dot{
+      position:absolute;
+      left:-22px;
+      top:22px;
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:#22d3a9;
+      box-shadow:0 0 0 6px rgba(34,211,169,.16);
+    }
+
+    .exp-head{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:6px;
+    }
+
+    .exp-company{
+      font-size:20px;
+      font-weight:700;
+      color:var(--text);
+    }
+
+    .exp-role{
+      font-size:15px;
+      color:var(--muted);
+    }
+
     .exp-loc{color:var(--muted)}
-    .exp-dates{color:var(--muted);font-size:14px;white-space:nowrap}
-    .exp-blurb{color:var(--muted);margin:6px 0 10px;line-height:1.7}
-    .exp-list{margin:0;padding-left:18px;color:#d6e2f5;line-height:1.65}
+
+    .exp-dates{
+      color:var(--muted);
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    .exp-blurb{
+      color:var(--muted);
+      margin:6px 0 10px;
+      line-height:1.7;
+    }
+
+    .exp-list{
+      margin:0;
+      padding-left:18px;
+      color:#d6e2f5;
+      line-height:1.65;
+    }
+
     .exp-list li{margin:.3rem 0}
     .exp-list li::marker{color:#22d3a9;}
-    .exp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .exp-tags span{font-size:12px;color:#c7d4e5;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:999px}
 
-    .site-footer{text-align:center;padding:20px 0;font-size:14px;color:var(--muted);border-top:1px solid rgba(255,255,255,.05);margin-top:40px}
+    .exp-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .exp-tags span{
+      font-size:12px;
+      color:#c7d4e5;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    .background-card p{
+      margin:0 0 16px;
+      color:#d6e2f5;
+      line-height:1.9;
+    }
+
+    .background-skills{
+      margin-top:8px;
+      color:#d6e2f5;
+    }
+
+    .background-skills strong{
+      display:block;
+      margin-bottom:8px;
+    }
+
+    .background-skills ul{
+      margin:0;
+      padding-left:22px;
+    }
+
+    .background-skills li{
+      margin:6px 0;
+      color:#d6e2f5;
+    }
+
+    .background-skills li::marker{
+      color:#22d3a9;
+    }
+
+    .site-footer{
+      text-align:center;
+      padding:20px 0;
+      font-size:14px;
+      color:var(--muted);
+      border-top:1px solid rgba(255,255,255,.05);
+      margin-top:40px;
+    }
+
     .footer-links{margin-top:8px}
-    .footer-links a{margin:0 10px;color:#4fc3f7;font-weight:500}
+
+    .footer-links a{
+      margin:0 10px;
+      color:#4fc3f7;
+      font-weight:500;
+    }
+
     .footer-links a:hover{text-decoration:underline}
 
-    @media (max-width:1100px){.skills-columns{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:1100px){
+      .skills-columns{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
     @media (max-width:900px){
       .hero{grid-template-columns:1fr}
       .hero-title,.hero-small{text-align:center}
@@ -97,7 +378,10 @@
       .exp-item{margin-left:24px}
       .exp-dot{left:-18px}
     }
-    @media (max-width:640px){.skills-columns{grid-template-columns:1fr}}
+
+    @media (max-width:640px){
+      .skills-columns{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -137,14 +421,27 @@
       <h2 class="exp-rail" style="margin-top: 90px;">BACKGROUND</h2>
       <div class="card background-card">
         <p>
-          I’m a Master’s student in Computer Science at the University of Tennessee, Knoxville, with experience in software engineering, network simulation, automation, and backend systems. My work has focused on building reliable and scalable solutions using C++, Python, Java, and cloud-native tools.
+          I’m a Master’s student in Computer Science at the University of Tennessee, Knoxville, focused on building scalable and reliable systems. My interests include distributed systems, data analytics, cloud computing, AI and machine learning, and networking, with an emphasis on real world impact.
         </p>
+
         <p>
-          At Nokia, I worked on a proprietary 5G simulator and contributed to FSM-based NR-RRC workflows aligned with 3GPP standards, improving efficiency and system stability. I also worked on post-handover recovery validation, observability improvements, CI/CD integration, and an NLP-powered internal ChatBot to automate routine support queries. At UTK, I support accessible document-processing workflows and maintain confidential academic records.
+          Previously at Nokia, I developed a proprietary 5G simulator, optimized FSM workflows to boost efficiency by 40%, and co-developed an NLP-powered ChatBot to automate internal support and enhance productivity.
         </p>
+
         <p>
-          My interests include distributed systems, software engineering, cloud computing, networking, data engineering, and applied AI. I enjoy solving complex engineering problems, improving system reliability, and building tools that create practical impact.
+          Excited about solving complex engineering problems, collaborating across teams, and continuously learning. Currently preparing to transition into graduate research and looking forward to opportunities in software engineering, automation, and applied AI.
         </p>
+
+        <div class="background-skills">
+          <strong>Skills:</strong>
+          <ul>
+            <li>C++ / Python Development</li>
+            <li>Backend &amp; Network Simulation</li>
+            <li>Automation &amp; CI/CD Pipelines</li>
+            <li>NLP &amp; Intelligent Systems</li>
+            <li>Debugging &amp; Observability Tools</li>
+          </ul>
+        </div>
       </div>
 
       <h2 class="exp-rail" style="margin-top:22px;">SKILLS</h2>
@@ -152,25 +449,47 @@
         <div class="skills-col">
           <h3>LANGUAGES</h3>
           <ul>
-            <li>C / C++</li><li>Python</li><li>Java</li><li>Kotlin</li>
+            <li>C / C++</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>Kotlin</li>
           </ul>
         </div>
         <div class="skills-col">
           <h3>FRAMEWORKS</h3>
           <ul>
-            <li>Pytest</li><li>Google Test (GTest)</li><li>Firebase</li><li>NS2</li><li>RESTful APIs</li>
+            <li>Pytest</li>
+            <li>Google Test (GTest)</li>
+            <li>Firebase</li>
+            <li>NS2</li>
+            <li>RESTful APIs</li>
           </ul>
         </div>
         <div class="skills-col">
           <h3>DEVOPS / TOOLS</h3>
           <ul>
-            <li>Jenkins</li><li>Kubernetes</li><li>Docker</li><li>Git</li><li>Jira</li><li>Wireshark</li><li>Valgrind</li><li>Coverity</li><li>AWS</li>
+            <li>Jenkins</li>
+            <li>Kubernetes</li>
+            <li>Docker</li>
+            <li>Git</li>
+            <li>Jira</li>
+            <li>Wireshark</li>
+            <li>Valgrind</li>
+            <li>Coverity</li>
+            <li>AWS</li>
           </ul>
         </div>
         <div class="skills-col">
           <h3>DATABASES / DATA</h3>
           <ul>
-            <li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>NLP</li><li>5G NR</li><li>RRC Protocols</li><li>3GPP</li>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+            <li>Redis</li>
+            <li>NLP</li>
+            <li>5G NR</li>
+            <li>RRC Protocols</li>
+            <li>3GPP</li>
           </ul>
         </div>
       </div>
@@ -218,7 +537,10 @@
               <li>Maintained AIM records with strict confidentiality and process accuracy.</li>
             </ul>
             <div class="exp-tags">
-              <span>Accessibility</span><span>Document Processing</span><span>Confidential Records</span><span>Workflow Support</span>
+              <span>Accessibility</span>
+              <span>Document Processing</span>
+              <span>Confidential Records</span>
+              <span>Workflow Support</span>
             </div>
           </article>
 
@@ -239,7 +561,14 @@
               <li>Co-developed an internal NLP ChatBot to automate routine queries and improve cross-team user experience.</li>
             </ul>
             <div class="exp-tags">
-              <span>C++</span><span>Python</span><span>Pytest</span><span>Wireshark</span><span>Docker</span><span>Kubernetes</span><span>Coverity</span><span>5G NR/RRC</span>
+              <span>C++</span>
+              <span>Python</span>
+              <span>Pytest</span>
+              <span>Wireshark</span>
+              <span>Docker</span>
+              <span>Kubernetes</span>
+              <span>Coverity</span>
+              <span>5G NR/RRC</span>
             </div>
           </article>
 
@@ -258,7 +587,10 @@
               <li>Contributed to approximately <strong>30%</strong> efficiency improvement through workflow support and optimization.</li>
             </ul>
             <div class="exp-tags">
-              <span>5G Simulation</span><span>NR-RRC</span><span>Performance Analysis</span><span>Workflow Optimization</span>
+              <span>5G Simulation</span>
+              <span>NR-RRC</span>
+              <span>Performance Analysis</span>
+              <span>Workflow Optimization</span>
             </div>
           </article>
 
@@ -278,7 +610,11 @@
               <li>Implemented RESTful APIs and asynchronous client-server interactions to improve responsiveness and reliability.</li>
             </ul>
             <div class="exp-tags">
-              <span>Java</span><span>Kotlin</span><span>Android</span><span>Firebase FCM</span><span>REST APIs</span>
+              <span>Java</span>
+              <span>Kotlin</span>
+              <span>Android</span>
+              <span>Firebase FCM</span>
+              <span>REST APIs</span>
             </div>
           </article>
 
@@ -317,7 +653,7 @@
           <li><a href="https://drive.google.com/file/d/1Nn514HJhtO8hESGnYy6suGGdAqsrztk9/view?usp=sharing" target="_blank" rel="noopener noreferrer">AWS Cloud Practitioner Essentials</a></li>
           <li><a href="https://drive.google.com/file/d/1dgr5MsttprP9MBYJJz69sCt53WGBZSrx/view?usp=drive_link" target="_blank" rel="noopener noreferrer">SW Design Patterns</a></li>
           <li><a href="https://drive.google.com/file/d/1NUet--C12k_vTGXw0uvwy1ZFPhAfn3NG/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Microsoft Azure: Core Cloud Services</a></li>
-          <li><a href="https://drive.google.com/file/d/1uuNR5kTWnsA2klSp50dwJ2ZPpGz31C2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Nokia Bell Labs 5G Foundation</a></li>
+          <li><a href="https://drive.google.com/file/d/1uuNR5kTWnsA2klSp50dwJ2PpGz31C2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Nokia Bell Labs 5G Foundation</a></li>
         </ul>
       </div>
     </section>
