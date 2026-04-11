@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Swathi Bangalore Satish</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0b0b0b;
+      border-bottom: 1px solid #222222;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d1d5db;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffffff;
+    }
+
+    .hero {
+      padding: 70px 20px 40px;
+      text-align: center;
+      background: linear-gradient(to bottom, #111111, #000000);
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: #cfcfcf;
+    }
+
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 70px;
+    }
+
+    .projects-section {
+      width: 100%;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .exp-rail {
+      color: #ffffff;
+      font-size: 28px;
+      letter-spacing: 1px;
+      position: sticky;
+      top: 100px;
+      white-space: nowrap;
+    }
+
+    .projects-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      background: #111111;
+      border: 1px solid #222222;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.04);
+      padding: 24px;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .project-list {
+      margin: 0.4rem 0 0 1.1rem;
+      color: #c7d4e5;
+    }
+
+    .project-list li {
+      margin-bottom: 10px;
+    }
+
+    .project-list li::marker {
+      color: #22c55e;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-rail {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 14px 18px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Swathi Bangalore Satish</div>
+    <nav class="nav-links">
+      <a href="index.html#home">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="index.html#certificates">Certificates</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Projects</h1>
+    <p>
+      A selection of projects in networking, software engineering,
+      research pipelines, and data reliability.
+    </p>
+  </section>
+
+  <main class="page-wrapper">
+    <section id="projects" class="projects-section">
+      <div class="projects-grid">
+        <h2 class="exp-rail">PROJECTS</h2>
+
+        <div class="projects-content">
+          <article class="card">
+            <h3>Performance Analysis of VANET Clustering Routing Protocol</h3>
+            <ul class="project-list">
+              <li>Simulated and analyzed a clustering-based VANET routing protocol using NS-2, evaluating packet delivery ratio, latency, and routing overhead, achieving up to ~20% improvement in PDR compared to baseline routing approaches.</li>
+              <li>Conducted comparative performance analysis of cluster-based routing mechanisms, demonstrating approximately 15–25% reduction in end-to-end delay and routing overhead through optimized cluster-head selection.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Ownership and Sentiment in WONTFIX Issues</h3>
+            <ul class="project-list">
+              <li>Built a Python-based research pipeline to analyze <strong>WONTFIX</strong> issues in open-source repositories.</li>
+              <li>Studied how code ownership, issue discussions, and sentiment relate to WONTFIX outcomes.</li>
+              <li>Created matched comparison sets of non-WONTFIX issues to support reliable analysis.</li>
+            </ul>
+          </article>
+          
+          <article class="card">
+            <h3>Synergetic Use of Bloom Filter in Error Detection &amp; Correction</h3>
+            <ul class="project-list">
+              <li>Built a Java-based error detection system using Bloom filters in IntelliJ IDEA, optimizing set validation with minimal false positives.</li>
+              <li>Demonstrated the synergy between Bloom filters and error correction codes (ECC) by tuning hash functions and evaluating space-time trade-offs, improving data reliability in noisy transmission environments.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2026 Swathi Bangalore Satish
+  </footer>
+
+</body>
+</html>
