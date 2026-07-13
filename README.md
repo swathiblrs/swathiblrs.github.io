@@ -5,15 +5,17 @@ This repository hosts my personal portfolio website.
 **Live site:** [https://swathiblrs.github.io](https://swathiblrs.github.io)
 
 ## About Me
-Results-driven software engineer with experience in C++/Python development, 5G NR/RRC simulation, and automation workflows.
-Previously at Nokia, optimized FSM workflows improving efficiency by 40% and co-developed an NLP-powered ChatBot to automate internal queries.
+Software and AI developer with experience across RAG applications, backend platforms, distributed network simulation, automation workflows, and data-driven systems.
+Previously at Nokia, architected state-machine workflows for 5G network simulation, improved simulator stability, and built a RAG-based internal knowledge assistant for engineering teams.
 
 ## Skills
-- **Programming:** C++, Python, Java, Kotlin
-- **Frameworks:** Pytest, GTest
-- **DevOps:** Jenkins, Docker, Kubernetes
+- **Programming:** C/C++, Python, Java, Kotlin, JavaScript, HTML/CSS, React
+- **AI / GenAI:** RAG, LLM Applications, NLP, Embeddings, Semantic Search, LangChain
+- **Backend:** RESTful APIs, Microservices, FastAPI, Event-Driven Systems
+- **Testing:** Pytest, GTest, Regression Testing, Protocol Validation, Static Analysis
+- **DevOps:** Git, Jenkins, Docker, Kubernetes, AWS, Firebase, CI/CD
 - **Databases:** MySQL, PostgreSQL, MongoDB, Redis
-- **Tools:** Wireshark, Valgrind, Coverity
+- **Tools:** Jira, Wireshark, Valgrind, Coverity, TDx, Streamlit
 
 ---
 
