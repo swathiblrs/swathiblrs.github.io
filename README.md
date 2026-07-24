@@ -23,6 +23,13 @@
   </a>
 </p>
 
+<h3 align="left">Current focus</h3>
+
+- Building production-ready RAG and knowledge retrieval workflows
+- Designing AI-assisted automation for support and service operations
+- Developing reliable backend services with validation, logging, and monitoring
+- Strengthening software testing, debugging, CI/CD, and system reliability
+
 <h3 align="left">Programming Languages</h3>
 <p align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python" width="40" height="40" />
