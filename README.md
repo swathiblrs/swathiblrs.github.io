@@ -1,8 +1,16 @@
-# Swathi Bangalore Satish Portfolio
+# Hi, I'm Swathi Bangalore Satish
 
-Personal portfolio website for Swathi Bangalore Satish, built as a static GitHub Pages site.
+### Software Engineer building reliable backend systems, AI-assisted automation workflows, and practical RAG applications.
 
-**Live site:** [https://swathiblrs.github.io](https://swathiblrs.github.io)
+🎓 **About me:** I am a master's student in Computer Science at the University of Tennessee, Knoxville, graduating in May 2027.
+
+💼 **Opportunities:** I am currently seeking 2027 new-grad Software Engineer roles.
+
+🌱 **Current focus:** Advanced RAG architectures, LLM application design, retrieval evaluation, and scalable backend systems.
+
+💬 **Ask me about:** Software engineering, backend development, automation workflows, RAG systems, NLP applications, 5G network simulation, testing, and system reliability.
+
+🌐 **Portfolio:** [swathiblrs.github.io](https://swathiblrs.github.io)
 
 ## Overview
 
